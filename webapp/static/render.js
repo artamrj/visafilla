@@ -8,6 +8,8 @@ export function createRenderer(context, workspace, rules) {
     $("message").textContent = message;
     $("message").className = "notice" + (error ? " error" : "");
   }
+  // Phones: guides start folded and long summaries collapse, to keep scrolling short.
+  const compact = () => window.matchMedia("(max-width: 700px)").matches;
   const icon = (name) => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
   const STEP_ICONS = ["user", "passport", "home", "briefcase", "route", "fingerprint", "bed", "file-check"];
   const initial = (p) => esc(p.name[0]?.toUpperCase() || "?");
@@ -128,7 +130,16 @@ export function createRenderer(context, workspace, rules) {
     } else {
       const text = f.kind === "list" ? (Array.isArray(v) ? v.join(", ") : "") : typeof v === "string" ? v : "";
       const example = f.kind === "date" ? "DD-MM-YYYY" : f.kind === "list" ? "Separate with commas" : "";
-      control = `<input type="text" id="${id}" data-field="${f.path}" ${described} ${invalid} value="${esc(text)}" placeholder="${example}" ${f.kind === "date" ? 'inputmode="numeric" maxlength="10"' : ""} autocomplete="off" spellcheck="false">`;
+      // The right phone keyboard for each answer, and a "Next" key that moves on.
+      const keyboard =
+        f.kind === "date"
+          ? 'inputmode="numeric"'
+          : f.path.endsWith(".email")
+            ? 'inputmode="email" autocapitalize="off"'
+            : f.path.endsWith(".phone")
+              ? 'inputmode="tel"'
+              : 'autocapitalize="characters"';
+      control = `<input type="text" id="${id}" data-field="${f.path}" ${described} ${invalid} value="${esc(text)}" placeholder="${example}" ${keyboard} ${f.kind === "date" ? 'maxlength="10"' : ""} enterkeyhint="next" autocomplete="off" autocorrect="off" spellcheck="false">`;
     }
     const review = needsCheck(p, f.path),
       ok = hasValue(v) && !errors.length && !review,
@@ -147,9 +158,10 @@ export function createRenderer(context, workspace, rules) {
   function stepGuide(p) {
     const text = meta.steps[p.step].hint_fa;
     if (!text) return "";
-    let open = true;
+    let open = !compact();
     try {
-      open = localStorage.getItem("visafilla.guide") !== "closed";
+      const saved = localStorage.getItem("visafilla.guide");
+      if (saved) open = saved !== "closed";
     } catch {
       // Storage may be blocked; keep the guide open.
     }
@@ -232,7 +244,7 @@ export function createRenderer(context, workspace, rules) {
         .map((s, i) => {
           const fields = fieldsFor(p).filter((f) => f.step === i && active(f, p));
           return fields.length
-            ? `<section class="review-section"><h3>${i + 1}. ${s.title} <button class="text-button" data-step="${i}">Edit</button></h3><dl>${fields.map((f) => `<div class="review-row"><dt>${esc(f.label)}</dt><dd>${esc(valueText(get(p.data, f.path)))}${needsCheck(p, f.path) ? ` <span class="marker">Check</span>` : ""}</dd></div>`).join("")}</dl></section>`
+            ? `<details class="review-section" ${compact() ? "" : "open"}><summary><h3>${i + 1}. ${s.title}</h3><button type="button" class="text-button" data-step="${i}">Edit</button></summary><dl>${fields.map((f) => `<div class="review-row"><dt>${esc(f.label)}</dt><dd>${esc(valueText(get(p.data, f.path)))}${needsCheck(p, f.path) ? ` <span class="marker">Check</span>` : ""}</dd></div>`).join("")}</dl></details>`
             : "";
         })
         .join(
@@ -307,6 +319,8 @@ export function createRenderer(context, workspace, rules) {
         ? "Unapplied edits saved in this browser."
         : "This JSON matches the guided form.";
     } else renderForm(p);
+    $("footer-caption").innerHTML =
+      `<span class="footer-step">Step ${p.step + 1} of ${meta.steps.length}</span><span class="footer-saved"> · saved automatically</span>`;
     $("previous-step").disabled = p.step === 0;
     $("next-step").textContent = p.step === 7 ? "Generate PDF →" : "Continue →";
     $("next-step").disabled = context.busy;

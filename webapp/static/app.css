@@ -112,8 +112,10 @@ a {
   border-radius: 6px
 }
 
-.icon-button:hover {
-  background: #dfe7db
+@media(hover:hover) {
+  .icon-button:hover {
+    background: #dfe7db
+  }
 }
 
 .text-button {
@@ -124,9 +126,11 @@ a {
   color: var(--green)
 }
 
-.text-button:hover {
-  color: var(--orange);
-  text-decoration: underline
+@media(hover:hover) {
+  .text-button:hover {
+    color: var(--orange);
+    text-decoration: underline
+  }
 }
 
 .status-dot {
@@ -203,8 +207,10 @@ a {
   font-size: 12px
 }
 
-.error-link:hover {
-  text-decoration: underline
+@media(hover:hover) {
+  .error-link:hover {
+    text-decoration: underline
+  }
 }
 
 .review-section {
@@ -371,11 +377,18 @@ dialog {
   color: var(--muted)
 }
 
-.country-card:not([disabled]):hover,
 .country-card:not([disabled]):focus-visible {
   border-color: var(--green);
   background: var(--green-soft);
   transform: translateY(-1px)
+}
+
+@media(hover:hover) {
+  .country-card:not([disabled]):hover {
+    border-color: var(--green);
+    background: var(--green-soft);
+    transform: translateY(-1px)
+  }
 }
 
 .country-card.selected {
@@ -466,7 +479,7 @@ dialog::backdrop {
 
 }
 
-@media(max-width:700px) {
+@media(max-width:900px) {
   .country-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr))
   }
@@ -594,9 +607,14 @@ dialog::backdrop {
   cursor: pointer
 }
 
-.country-chip:hover,
 .country-chip:focus-visible {
   border-color: var(--green)
+}
+
+@media(hover:hover) {
+  .country-chip:hover {
+    border-color: var(--green)
+  }
 }
 
 .country-chip .country-flag {
@@ -636,8 +654,10 @@ dialog::backdrop {
   transition: border-color .12s, box-shadow .12s
 }
 
-.applicant-switch:hover {
-  border-color: #c3cebd
+@media(hover:hover) {
+  .applicant-switch:hover {
+    border-color: #c3cebd
+  }
 }
 
 .applicant-switch[aria-expanded=true] {
@@ -729,11 +749,18 @@ progress::-moz-progress-bar {
   transition: background .12s, color .12s
 }
 
-.square-button:hover,
 .square-button:focus-visible {
   border-color: var(--green);
   background: var(--green);
   color: #fff
+}
+
+@media(hover:hover) {
+  .square-button:hover {
+    border-color: var(--green);
+    background: var(--green);
+    color: #fff
+  }
 }
 
 .applicant-menu {
@@ -785,11 +812,16 @@ progress::-moz-progress-bar {
   cursor: pointer
 }
 
-.profile-button:hover,
 .profile-button:focus-visible,
-.menu-item:hover,
 .menu-item:focus-visible {
   background: var(--green-soft)
+}
+
+@media(hover:hover) {
+  .profile-button:hover,
+  .menu-item:hover {
+    background: var(--green-soft)
+  }
 }
 
 .profile-button .avatar {
@@ -843,9 +875,14 @@ progress::-moz-progress-bar {
   color: var(--danger)
 }
 
-.menu-item.danger:hover,
 .menu-item.danger:focus-visible {
   background: #fbeeec
+}
+
+@media(hover:hover) {
+  .menu-item.danger:hover {
+    background: #fbeeec
+  }
 }
 
 /* Steps: icon, title and a tick once a step is complete. */
@@ -920,9 +957,11 @@ progress::-moz-progress-bar {
   stroke-width: 2.6
 }
 
-.step-button:hover {
-  background: #e8ede3;
-  color: var(--ink)
+@media(hover:hover) {
+  .step-button:hover {
+    background: #e8ede3;
+    color: var(--ink)
+  }
 }
 
 .step-button.active {
@@ -981,8 +1020,10 @@ progress::-moz-progress-bar {
   opacity: .8
 }
 
-.action-button:hover {
-  background: #1a392e
+@media(hover:hover) {
+  .action-button:hover {
+    background: #1a392e
+  }
 }
 
 .action-button.quiet {
@@ -998,8 +1039,10 @@ progress::-moz-progress-bar {
   opacity: 1
 }
 
-.action-button.quiet:hover {
-  background: #e8ede3
+@media(hover:hover) {
+  .action-button.quiet:hover {
+    background: #e8ede3
+  }
 }
 
 #validation-status.valid {
@@ -1045,10 +1088,16 @@ progress::-moz-progress-bar {
   height: 14px
 }
 
-.footer-link:hover,
 .footer-link:focus-visible {
   background: #e8ede3;
   color: var(--ink)
+}
+
+@media(hover:hover) {
+  .footer-link:hover {
+    background: #e8ede3;
+    color: var(--ink)
+  }
 }
 
 @media(min-width:1500px) {
@@ -1059,7 +1108,7 @@ progress::-moz-progress-bar {
   }
 }
 
-@media(max-width:1150px) and (min-width:701px) {
+@media(max-width:1150px) and (min-width:901px) {
   .sidebar {
     width: 300px;
     padding-left: 14px;
@@ -1068,7 +1117,7 @@ progress::-moz-progress-bar {
 }
 
 /* Short screens: tighten spacing so everything still fits without scrolling. */
-@media(max-height:760px) and (min-width:701px) {
+@media(max-height:760px) and (min-width:901px) {
   .sidebar {
     padding-top: 14px
   }
@@ -1097,7 +1146,7 @@ progress::-moz-progress-bar {
   }
 }
 
-@media(max-height:600px) and (min-width:701px) {
+@media(max-height:600px) and (min-width:901px) {
   .side-label {
     display: none
   }
@@ -1124,7 +1173,7 @@ progress::-moz-progress-bar {
 }
 
 /* Phones: the sidebar becomes a compact header with icon-only steps. */
-@media(max-width:700px) {
+@media(max-width:900px) {
   .sidebar {
     position: relative;
     width: auto;
@@ -1418,11 +1467,18 @@ h3 {
   cursor: help
 }
 
-.help-icon:hover,
 .help-icon:focus-visible {
   border-color: var(--green);
   background: var(--green);
   color: #fff
+}
+
+@media(hover:hover) {
+  .help-icon:hover {
+    border-color: var(--green);
+    background: var(--green);
+    color: #fff
+  }
 }
 
 .help-tip {
@@ -1443,9 +1499,14 @@ h3 {
   pointer-events: none
 }
 
-.help:hover .help-tip,
 .help-icon:focus + .help-tip {
   display: block
+}
+
+@media(hover:hover) {
+  .help:hover .help-tip {
+    display: block
+  }
 }
 
 /* Text inputs */
@@ -1473,9 +1534,11 @@ h3 {
   color: #a5ada2
 }
 
-.field input[type=text]:hover,
-.field textarea:hover {
-  border-color: #b4c1ad
+@media(hover:hover) {
+  .field input[type=text]:hover,
+  .field textarea:hover {
+    border-color: #b4c1ad
+  }
 }
 
 .field input[type=text]:focus,
@@ -1527,9 +1590,11 @@ h3 {
   cursor: pointer
 }
 
-.chip:hover {
-  border-color: #9fb29a;
-  background: #f6f9f4
+@media(hover:hover) {
+  .chip:hover {
+    border-color: #9fb29a;
+    background: #f6f9f4
+  }
 }
 
 .chip:has(.chip-input:checked) {
@@ -1595,9 +1660,11 @@ h3 {
   cursor: pointer
 }
 
-.confirm-button:hover {
-  border-color: var(--green);
-  color: var(--green)
+@media(hover:hover) {
+  .confirm-button:hover {
+    border-color: var(--green);
+    color: var(--green)
+  }
 }
 
 .confirm-button .icon {
@@ -1666,9 +1733,11 @@ h3 {
   cursor: pointer
 }
 
-.add-button:hover {
-  border-style: solid;
-  background: var(--green-soft)
+@media(hover:hover) {
+  .add-button:hover {
+    border-style: solid;
+    background: var(--green-soft)
+  }
 }
 
 /* Buttons */
@@ -1696,8 +1765,10 @@ h3 {
   color: #fff
 }
 
-.primary:hover {
-  background: #183f30
+@media(hover:hover) {
+  .primary:hover {
+    background: #183f30
+  }
 }
 
 .secondary {
@@ -1706,8 +1777,10 @@ h3 {
   color: #3b4f42
 }
 
-.secondary:hover {
-  background: #f3f6f0
+@media(hover:hover) {
+  .secondary:hover {
+    background: #f3f6f0
+  }
 }
 
 .danger-button {
@@ -1976,4 +2049,380 @@ h3 {
   .welcome-footer .button-row button {
     flex: 1
   }
+}
+
+/* ---------- Phones and portrait tablets ---------- */
+/* One slim sticky bar: logo, applicant with progress, add and country, then the eight steps. */
+@media(max-width:900px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand applicant country"
+      "steps steps steps";
+    align-items: center;
+    gap: 8px 10px;
+    padding: calc(8px + env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) 8px max(14px, env(safe-area-inset-left));
+    background: #f3f5efee;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 var(--line), 0 6px 18px #1b39240d
+  }
+
+  .side-header {
+    display: contents
+  }
+
+  .brand {
+    grid-area: brand;
+    margin: 0
+  }
+
+  .brand > span:last-child {
+    display: none
+  }
+
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 27px
+  }
+
+  #country-switch {
+    grid-area: country;
+    height: 44px;
+    padding: 0 10px
+  }
+
+  #country-switch > span:not(.country-flag) {
+    display: none
+  }
+
+  #country-switch .country-flag {
+    font-size: 22px
+  }
+
+  .applicant-row {
+    grid-area: applicant;
+    gap: 6px;
+    margin: 0
+  }
+
+  .applicant-switch {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 2px 8px;
+    min-height: 44px;
+    padding: 6px 10px;
+    border-radius: 12px
+  }
+
+  .applicant-switch .avatar {
+    grid-column: 1;
+    width: 30px;
+    height: 30px;
+    font-size: 14px
+  }
+
+  .applicant-text {
+    grid-column: 2;
+    text-align: left
+  }
+
+  .applicant-switch > .icon {
+    grid-column: 3
+  }
+
+  .applicant-text {
+    gap: 0
+  }
+
+  #current-name {
+    font-size: 13px
+  }
+
+  #progress-detail {
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+
+  .applicant-switch progress,
+  #progress-percent {
+    display: none
+  }
+
+  .square-button {
+    width: 44px;
+    border-radius: 12px
+  }
+
+  .applicant-menu {
+    position: fixed;
+    top: auto;
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+    max-height: min(70vh, 520px)
+  }
+
+  /* Eight equal step buttons that always fit the width, with a thin progress line. */
+  #steps {
+    grid-area: steps;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 4px;
+    overflow: visible
+  }
+
+  .step-button {
+    position: relative;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0;
+    border-radius: 10px
+  }
+
+  .step-icon {
+    width: 100%;
+    max-width: 44px;
+    height: 40px;
+    border-radius: 10px
+  }
+
+  .step-icon .icon {
+    width: 20px;
+    height: 20px
+  }
+
+  .step-button.done:not(.active) .step-icon::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 3px;
+    width: 6px;
+    height: 6px;
+    margin-right: -3px;
+    border-radius: 50%;
+    background: #3f7a50
+  }
+
+  .step-button.active {
+    box-shadow: none;
+    background: transparent
+  }
+
+  .app-shell {
+    margin: 0
+  }
+
+  #workspace {
+    padding: 22px max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left))
+  }
+
+  /* While typing, the bars step aside so the keyboard leaves room for the field. */
+  body:has(#form-content :is(input[type=text], textarea):focus) .sidebar,
+  body:has(#form-content :is(input[type=text], textarea):focus) .step-footer {
+    position: relative
+  }
+
+  .step-footer {
+    padding-bottom: calc(14px + env(safe-area-inset-bottom))
+  }
+
+  #preview-content,
+  #review-content,
+  #errors-panel,
+  .field {
+    scroll-margin-top: 140px
+  }
+}
+
+@media(max-width:700px) {
+  .page-heading {
+    align-items: flex-start;
+    gap: 12px
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.1px
+  }
+
+  /* A single toggle: show only the view you can switch to. */
+  .view-switch {
+    padding: 0;
+    background: transparent
+  }
+
+  .view-switch button[aria-pressed=true] {
+    display: none
+  }
+
+  .view-switch button {
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff
+  }
+
+  .sample-banner {
+    gap: 10px;
+    padding: 12px 14px
+  }
+
+  .sample-banner p {
+    flex-basis: calc(100% - 40px);
+    font-size: 13px
+  }
+
+  .sample-banner .primary {
+    width: 100%
+  }
+
+  .step-guide summary {
+    min-height: 48px
+  }
+
+  .step-guide ul {
+    font-size: 14px
+  }
+
+  .help-tip {
+    max-width: none;
+    font-size: 14px
+  }
+
+  #footer-caption {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    color: var(--muted)
+  }
+
+  #footer-caption .footer-saved {
+    display: none
+  }
+
+  .step-footer .primary,
+  .step-footer .secondary {
+    min-height: 48px;
+    padding: 0 16px
+  }
+
+  .preview-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px
+  }
+
+  .preview-tabs button {
+    min-height: 44px
+  }
+
+  dialog {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto
+  }
+}
+
+/* Touch screens: bigger targets, no 300 ms tap delay, and no zoom when a field is focused. */
+@media(pointer:coarse) {
+  button,
+  a,
+  label,
+  .chip,
+  summary {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent
+  }
+
+  .field input[type=text],
+  .field textarea,
+  #json-editor,
+  #modal-body input {
+    font-size: 16px
+  }
+
+  .help-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    font-size: 13px
+  }
+
+  .help-icon::before {
+    content: "";
+    position: absolute;
+    inset: -10px
+  }
+
+  .chip {
+    min-height: 44px
+  }
+
+  .text-button,
+  .footer-link,
+  .confirm-button,
+  .menu-item,
+  .profile-button {
+    min-height: 44px
+  }
+
+  .view-switch button {
+    min-height: 40px
+  }
+
+  .country-chip {
+    height: 44px
+  }
+}
+
+/* Review sections fold open; they start folded on phones. */
+.review-section summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  list-style: none;
+  cursor: pointer
+}
+
+.review-section summary::-webkit-details-marker {
+  display: none
+}
+
+.review-section summary h3 {
+  margin: 0
+}
+
+.review-section summary::after {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform .15s
+}
+
+.review-section[open] summary::after {
+  transform: rotate(-135deg)
+}
+
+.review-section summary .text-button {
+  margin-left: auto
+}
+
+/* Keep dates, phone numbers and other Latin values in Persian text on one line. */
+.help-tip bdi,
+.step-guide bdi,
+.welcome-fa bdi {
+  white-space: nowrap
 }

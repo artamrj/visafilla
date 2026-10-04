@@ -349,6 +349,14 @@ $("form-content").addEventListener("input", (event) => {
   const note = wrap?.querySelector(".field-note-wrap");
   if (note) note.innerHTML = "";
 });
+// Help bubbles open on tap (focus); tapping the same icon again closes it.
+document.addEventListener("pointerdown", (event) => {
+  const icon = event.target.closest?.(".help-icon");
+  if (icon && document.activeElement === icon) {
+    event.preventDefault();
+    icon.blur();
+  }
+});
 // Remember whether the step guide was closed, so it stays out of the way once read.
 $("form-content").addEventListener(
   "toggle",

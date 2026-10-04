@@ -183,16 +183,14 @@ export function createActions({context, workspace, rules, storage, ui, requests,
       context.busy = false;
       $("validate").disabled = false;
       render();
-      if (generate && session(p).artifact)
-        $("preview-content").scrollIntoView({
-          behavior: "instant",
-          block: "start",
-        });
-      else if (session(p).errors.length)
-        $("errors-panel").scrollIntoView({
-          behavior: "instant",
-          block: "center",
-        });
+      // Scroll after the next frame, once the summary has re-rendered above the target.
+      const target = generate && session(p).artifact ? "preview-content" : session(p).errors.length ? "errors-panel" : null;
+      if (target)
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() =>
+            $(target).scrollIntoView({ behavior: "instant", block: target === "errors-panel" ? "center" : "start" }),
+          ),
+        );
     }
   }
   async function applyJSON() {
