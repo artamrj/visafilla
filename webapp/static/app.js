@@ -85,10 +85,13 @@ document.addEventListener("keydown", (event) => {
   }
 });
 $("sample-profile").onclick = addSample;
+// Help and Privacy also live in the applicant menu, where phones can reach them.
+$("menu-help").onclick = () => $("help").click();
+$("menu-about").onclick = () => $("about").click();
 $("about").onclick = () =>
   dialog(
     "Privacy and disclaimer",
-    "<p><strong>Your data stays on this computer.</strong> Answers are saved only in this browser and PDFs are made by the app running on your own machine. Nothing is uploaded. Export a JSON backup to keep your work safe, because clearing browser data deletes drafts.</p><p><strong>Not an official service.</strong> VisaFilla is an independent tool and is not connected to any government, consulate or visa centre. It does not give legal advice. Always check every answer against your documents and the current requirements before signing.</p>",
+    "<p><strong>Your data stays on this device.</strong> Answers are saved only in this browser, and the PDF is made inside this page. Nothing is uploaded. Export a JSON backup to keep your work safe, because clearing browser data deletes drafts.</p><p><strong>Not an official service.</strong> VisaFilla is an independent tool and is not connected to any government, consulate or visa centre. It does not give legal advice. Always check every answer against your documents and the current requirements before signing.</p>",
     [{ value: "ok", label: "Got it", kind: "primary" }],
   );
 
@@ -349,13 +352,27 @@ $("form-content").addEventListener("input", (event) => {
   const note = wrap?.querySelector(".field-note-wrap");
   if (note) note.innerHTML = "";
 });
-// Help bubbles open on tap (focus); tapping the same icon again closes it.
-document.addEventListener("pointerdown", (event) => {
-  const icon = event.target.closest?.(".help-icon");
-  if (icon && document.activeElement === icon) {
-    event.preventDefault();
-    icon.blur();
+// Help bubbles open and close on tap or click (iPhone Safari never focuses a tapped button,
+// so this cannot rely on :focus). Only one is open at a time; tapping elsewhere closes it.
+function closeHelp(except = null) {
+  for (const help of document.querySelectorAll(".help.open")) {
+    if (help === except) continue;
+    help.classList.remove("open");
+    help.querySelector(".help-icon")?.setAttribute("aria-expanded", "false");
   }
+}
+document.addEventListener("click", (event) => {
+  const icon = event.target.closest?.(".help-icon");
+  if (!icon) {
+    if (!event.target.closest?.(".help-tip")) closeHelp();
+    return;
+  }
+  const help = icon.closest(".help");
+  closeHelp(help);
+  icon.setAttribute("aria-expanded", String(help.classList.toggle("open")));
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeHelp();
 });
 // Remember whether the step guide was closed, so it stays out of the way once read.
 $("form-content").addEventListener(

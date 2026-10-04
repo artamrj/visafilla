@@ -42,7 +42,7 @@ export function createCountryPicker({ $, esc, countries }) {
     $("country-grid").innerHTML =
       `<h3 class="country-group">Available now</h3><div class="country-cards">${ready.map(card).join("")}</div>` +
       (soon.length
-        ? `<h3 class="country-group">Coming soon</h3><div class="country-cards">${soon.map(card).join("")}</div>`
+        ? `<details class="country-more"><summary>Show ${soon.length} more countries · coming soon</summary><div class="country-cards">${soon.map(card).join("")}</div></details>`
         : "");
     $("country-dialog").showModal();
     $("country-grid").querySelector(".country-card:not([disabled])")?.focus({ preventScroll: true });

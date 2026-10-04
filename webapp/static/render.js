@@ -65,7 +65,7 @@ export function createRenderer(context, workspace, rules) {
       .join("");
   function helpTip(id, text) {
     return text
-      ? `<span class="help"><button type="button" class="help-icon" aria-label="Guidance" aria-describedby="${id}">i</button><span class="help-tip" role="tooltip" id="${id}" lang="fa" dir="rtl">${fa(text)}</span></span>`
+      ? `<span class="help"><button type="button" class="help-icon" aria-label="Guidance" aria-describedby="${id}" aria-expanded="false">i</button><span class="help-tip" role="tooltip" id="${id}" lang="fa" dir="rtl">${fa(text)}</span></span>`
       : "";
   }
   const OPTION_LABELS = {

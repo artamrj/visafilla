@@ -599,3 +599,38 @@ def test_welcome_guide_shows_once_and_reopens_from_help(browser, web_server):
     page.locator('#welcome-sample').click()
     playwright.expect(page.locator('.sample-banner')).to_be_visible()
     context.close()
+
+
+def test_help_opens_by_tap_without_focus_like_iphone_safari(page):
+    # iPhone Safari never focuses a tapped button, so the bubble must not depend on focus.
+    tip = page.locator('[data-field-wrap="personal.surname"] .help-tip')
+    tap = "document.querySelector('[data-field-wrap=\"personal.surname\"] .help-icon').click()"
+    page.mouse.move(0, 0)
+    page.evaluate(tap)
+    playwright.expect(tip).to_be_visible()
+    assert page.evaluate('document.activeElement.className') != 'help-icon'
+    page.evaluate(tap)
+    playwright.expect(tip).to_be_hidden()
+    page.evaluate(tap)
+    page.locator('#step-title').click()
+    playwright.expect(tip).to_be_hidden()
+
+
+def test_dialogs_fit_small_phones_without_scrolling(browser, web_server):
+    fit = """(id) => { const d = document.getElementById(id), r = d.getBoundingClientRect();
+      return d.scrollHeight <= d.clientHeight && r.top >= 0 && r.bottom <= innerHeight; }"""
+    for width, height in [(320, 568), (375, 667)]:
+        context = browser.new_context(viewport={'width': width, 'height': height}, is_mobile=True, has_touch=True)
+        page = context.new_page()
+        page.goto(web_server.origin)
+        page.wait_for_selector('#country-dialog[open]')
+        assert page.evaluate(fit, 'country-dialog'), (width, 'country')
+        playwright.expect(page.locator('[data-country="FR"]')).to_be_hidden()
+        page.locator('[data-country="ES"]').tap()
+        page.wait_for_selector('#welcome-dialog[open]')
+        assert page.evaluate(fit, 'welcome-dialog'), (width, 'welcome')
+        page.locator('#welcome-start').tap()
+        menu(page, '#menu-about')
+        page.wait_for_selector('#modal[open]')
+        assert page.evaluate(fit, 'modal'), (width, 'privacy')
+        context.close()
