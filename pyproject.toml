@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "visafilla"
 version = "0.1.0"
-description = "Free, private, local helper for completing the Spanish Schengen visa application PDF."
+description = "Free, private helper for completing the Spanish Schengen visa application PDF, entirely in the browser."
 license = "AGPL-3.0-or-later"
 readme = "README.md"
 requires-python = ">=3.12"

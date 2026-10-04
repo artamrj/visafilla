@@ -9,7 +9,7 @@ import pytest
 from script.core import renderer, utils
 from script.core.schema import Applicant
 from script.core.validator import load_applicant, parse_json_object
-from webapp.server import parse_object
+from webapp.validation import parse_object
 
 from .scenarios import example
 

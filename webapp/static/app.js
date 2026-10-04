@@ -132,7 +132,7 @@ $("import-file").onchange = async (event) => {
       "Imported as a separate profile. Review the answers and reattach any signature image.",
     );
   } catch (e) {
-    notify("Import failed. Check that the local server is running.", true);
+    notify("Import failed. Check that the file is an applicant JSON export.", true);
   }
 };
 $("manage-profile").onclick = async () => {
@@ -455,10 +455,9 @@ window.addEventListener("beforeunload", () => {
 
 async function start() {
   try {
-    const response = await fetch("/api/bootstrap");
+    const response = await fetch("meta.json");
+    if (!response.ok) throw new Error("Could not load the application. Check your connection and reload.");
     Object.assign(meta, await response.json());
-    if (!response.ok)
-      throw new Error(meta.error || "Could not load the local application.");
     try {
       db = setDB(await initDB());
       const saved = await readState();

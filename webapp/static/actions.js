@@ -176,7 +176,7 @@ export function createActions({context, workspace, rules, storage, ui, requests,
       }
     } catch (e) {
       notify(
-        "The local server is unavailable. Your browser draft is still here. Start python -m webapp and try again.",
+        "Something went wrong while preparing the PDF. Your draft is safe; reload the page and try again.",
         true,
       );
     } finally {
@@ -229,7 +229,7 @@ export function createActions({context, workspace, rules, storage, ui, requests,
         : "JSON applied to the guided form. Use Check application for layout validation.";
     } catch (e) {
       $("json-status").textContent =
-        "Could not reach the local server. Your JSON edits are preserved.";
+        "Could not apply this JSON. Your edits are preserved.";
     }
   }
 

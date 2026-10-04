@@ -1,15 +1,9 @@
 import { syncJSON } from "./helpers.js";
+import { createEngine } from "./engine/index.js";
 
 export function createAPI(meta) {
-  async function api(route, body) {
-    const res = await fetch(route, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-App-Token": meta.token },
-      body: JSON.stringify(body),
-    });
-    const data = await res.json();
-    return { ok: res.ok, ...data };
-  }
+  // Parsing, validation and PDF generation all run in this browser tab.
+  const { api } = createEngine(meta);
   function downloadJSON(p, raw = false) {
     syncJSON(p);
     const text = raw ? p.jsonText : JSON.stringify(p.data, null, 2);

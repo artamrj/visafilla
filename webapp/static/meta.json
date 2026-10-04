@@ -1,0 +1,3337 @@
+{
+ "countries": [
+  {
+   "available": false,
+   "code": "AT",
+   "name": "Austria"
+  },
+  {
+   "available": false,
+   "code": "BE",
+   "name": "Belgium"
+  },
+  {
+   "available": false,
+   "code": "BG",
+   "name": "Bulgaria"
+  },
+  {
+   "available": false,
+   "code": "HR",
+   "name": "Croatia"
+  },
+  {
+   "available": false,
+   "code": "CZ",
+   "name": "Czechia"
+  },
+  {
+   "available": false,
+   "code": "DK",
+   "name": "Denmark"
+  },
+  {
+   "available": false,
+   "code": "EE",
+   "name": "Estonia"
+  },
+  {
+   "available": false,
+   "code": "FI",
+   "name": "Finland"
+  },
+  {
+   "available": false,
+   "code": "FR",
+   "name": "France"
+  },
+  {
+   "available": false,
+   "code": "DE",
+   "name": "Germany"
+  },
+  {
+   "available": false,
+   "code": "GR",
+   "name": "Greece"
+  },
+  {
+   "available": false,
+   "code": "HU",
+   "name": "Hungary"
+  },
+  {
+   "available": false,
+   "code": "IS",
+   "name": "Iceland"
+  },
+  {
+   "available": false,
+   "code": "IT",
+   "name": "Italy"
+  },
+  {
+   "available": false,
+   "code": "LV",
+   "name": "Latvia"
+  },
+  {
+   "available": false,
+   "code": "LI",
+   "name": "Liechtenstein"
+  },
+  {
+   "available": false,
+   "code": "LT",
+   "name": "Lithuania"
+  },
+  {
+   "available": false,
+   "code": "LU",
+   "name": "Luxembourg"
+  },
+  {
+   "available": false,
+   "code": "MT",
+   "name": "Malta"
+  },
+  {
+   "available": false,
+   "code": "NL",
+   "name": "Netherlands"
+  },
+  {
+   "available": false,
+   "code": "NO",
+   "name": "Norway"
+  },
+  {
+   "available": false,
+   "code": "PL",
+   "name": "Poland"
+  },
+  {
+   "available": false,
+   "code": "PT",
+   "name": "Portugal"
+  },
+  {
+   "available": false,
+   "code": "RO",
+   "name": "Romania"
+  },
+  {
+   "available": false,
+   "code": "SK",
+   "name": "Slovakia"
+  },
+  {
+   "available": false,
+   "code": "SI",
+   "name": "Slovenia"
+  },
+  {
+   "available": true,
+   "code": "ES",
+   "name": "Spain"
+  },
+  {
+   "available": false,
+   "code": "SE",
+   "name": "Sweden"
+  },
+  {
+   "available": false,
+   "code": "CH",
+   "name": "Switzerland"
+  }
+ ],
+ "errorLinks": [
+  {
+   "paths": [
+    "personal.date_of_birth",
+    "application.date",
+    "guardian.surname"
+   ],
+   "phrase": "guardian must"
+  },
+  {
+   "paths": [
+    "personal.date_of_birth",
+    "application.date"
+   ],
+   "phrase": "date_of_birth must"
+  },
+  {
+   "paths": [
+    "personal.date_of_birth",
+    "passport.date_of_issue",
+    "application.date",
+    "journey.arrival_date"
+   ],
+   "phrase": "expected birth"
+  },
+  {
+   "paths": [
+    "passport.valid_until",
+    "journey.departure_date"
+   ],
+   "phrase": "passport expires"
+  },
+  {
+   "paths": [
+    "previous_biometrics.date"
+   ],
+   "phrase": "fingerprint date must"
+  },
+  {
+   "paths": [
+    "residence.valid_until"
+   ],
+   "phrase": "residence permit expires"
+  },
+  {
+   "paths": [
+    "eu_family_member.date_of_birth"
+   ],
+   "phrase": "EU family member birth"
+  },
+  {
+   "paths": [
+    "eu_family_exemption",
+    "eu_family_member.surname"
+   ],
+   "phrase": "exemption requires eu_family_member"
+  },
+  {
+   "paths": [
+    "eu_family_exemption",
+    "occupation.current_occupation",
+    "accommodation.name",
+    "expenses.paid_by"
+   ],
+   "phrase": "exemption requires fields"
+  },
+  {
+   "paths": [
+    "occupation.current_occupation",
+    "expenses.paid_by",
+    "accommodation.name"
+   ],
+   "phrase": "non-exempt applications"
+  },
+  {
+   "paths": [
+    "expenses.sponsor.reference",
+    "accommodation.name"
+   ],
+   "phrase": "field_30 requires"
+  },
+  {
+   "paths": [
+    "expenses.sponsor.reference",
+    "inviting_company.name"
+   ],
+   "phrase": "field_31 requires"
+  },
+  {
+   "paths": [
+    "journey.departure_date",
+    "journey.arrival_date"
+   ],
+   "phrase": "departure_date must"
+  },
+  {
+   "paths": [
+    "passport.date_of_issue",
+    "passport.valid_until"
+   ],
+   "phrase": "valid_until must follow"
+  },
+  {
+   "paths": [
+    "previous_biometrics.fingerprints_taken",
+    "previous_biometrics.date"
+   ],
+   "phrase": "fingerprints_taken=false"
+  },
+  {
+   "paths": [
+    "residence.lives_outside_country_of_nationality",
+    "residence.permit_type"
+   ],
+   "phrase": "residence=false"
+  },
+  {
+   "paths": [
+    "residence.permit_type",
+    "residence.permit_number",
+    "residence.valid_until"
+   ],
+   "phrase": "residence=true"
+  },
+  {
+   "paths": [
+    "expenses.paid_by",
+    "expenses.sponsor_means"
+   ],
+   "phrase": "shared funding"
+  },
+  {
+   "paths": [
+    "expenses.applicant_means",
+    "expenses.paid_by"
+   ],
+   "phrase": "applicant_means must"
+  },
+  {
+   "paths": [
+    "expenses.sponsor.reference",
+    "expenses.sponsor_means"
+   ],
+   "phrase": "sponsor funding requires"
+  },
+  {
+   "paths": [
+    "application.signature.enabled",
+    "application.signature.image_path"
+   ],
+   "phrase": "signature image_path"
+  }
+ ],
+ "fields": [
+  {
+   "group": "personal",
+   "hint_fa": "نام خانوادگی را دقیقاً مانند گذرنامه و با حروف بزرگ لاتین بنویسید. مثال: MOHAMMADI. اگر نام خانوادگی چند بخش دارد، همه بخش‌ها و فاصله‌ها را مثل گذرنامه بنویسید. بهترین مرجع، سطرهای پایین صفحه مشخصات گذرنامه (سطرهای ماشین‌خوان) است.",
+   "kind": "string",
+   "label": "Surname",
+   "nullable": false,
+   "options": [],
+   "path": "personal.surname",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "فقط اگر نام خانوادگی شما از زمان تولد تغییر کرده است (مثلاً پس از ازدواج یا تغییر قانونی)، نام خانوادگی قبلی را بنویسید. اگر تغییری نکرده، خالی بگذارید.",
+   "kind": "string",
+   "label": "Surname at birth / former surname",
+   "nullable": true,
+   "options": [],
+   "path": "personal.surname_at_birth",
+   "required": false,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "همه نام‌های کوچک درج‌شده در گذرنامه را به ترتیب و با همان املای لاتین بنویسید. مثال: SARA یا MOHAMMAD ALI. نام پدر را اینجا ننویسید.",
+   "kind": "string",
+   "label": "Given names",
+   "nullable": false,
+   "options": [],
+   "path": "personal.given_names",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "تاریخ تولد میلادی را از گذرنامه بنویسید، با قالب روز-ماه-سال و ارقام انگلیسی. مثال: 23-04-1990. کافی است ارقام را تایپ کنید؛ خط تیره خودکار اضافه می‌شود. تاریخ شمسی وارد نکنید.",
+   "kind": "date",
+   "label": "Date of birth",
+   "nullable": false,
+   "options": [],
+   "path": "personal.date_of_birth",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "شهر محل تولد را مانند گذرنامه و به لاتین بنویسید. مثال: TEHRAN یا ISFAHAN. محل سکونت فعلی مهم نیست.",
+   "kind": "string",
+   "label": "Place of birth",
+   "nullable": false,
+   "options": [],
+   "path": "personal.place_of_birth",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "نام انگلیسی کشور محل تولد را بنویسید. مثال: IRAN. کشور تولد ممکن است با تابعیت فعلی فرق داشته باشد؛ مثلاً کسی که در عراق متولد شده و تابعیت ایران دارد.",
+   "kind": "string",
+   "label": "Country of birth",
+   "nullable": false,
+   "options": [],
+   "path": "personal.country_of_birth",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "تابعیت فعلی را به انگلیسی و مطابق گذرنامه بنویسید. مثال: IRANIAN. اگر چند تابعیت دارید، اینجا تابعیت گذرنامه‌ای را بنویسید که با آن درخواست می‌دهید و بقیه را در «Other nationalities» بیاورید.",
+   "kind": "string",
+   "label": "Current nationality",
+   "nullable": false,
+   "options": [],
+   "path": "personal.current_nationality",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "فقط اگر تابعیت شما هنگام تولد با تابعیت فعلی فرق داشته آن را بنویسید. اگر یکسان است خالی بگذارید؛ مقدار یکسان در PDF چاپ نمی‌شود.",
+   "kind": "string",
+   "label": "Nationality at birth",
+   "nullable": true,
+   "options": [],
+   "path": "personal.nationality_at_birth",
+   "required": false,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "اگر تابعیت دیگری هم دارید (حتی بدون گذرنامه فعال)، آن را بنویسید و چند مورد را با ویرگول انگلیسی جدا کنید. مثال: CANADIAN. اگر ندارید خالی بگذارید.",
+   "kind": "list",
+   "label": "Other nationalities",
+   "nullable": false,
+   "options": [],
+   "path": "personal.other_nationalities",
+   "required": false,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "جنسیت را مطابق گذرنامه انتخاب کنید (Male = مرد، Female = زن). این نسخه رسمی فرم فقط همین دو گزینه را دارد.",
+   "kind": "select",
+   "label": "Sex",
+   "nullable": false,
+   "options": [
+    "male",
+    "female"
+   ],
+   "path": "personal.sex",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "وضعیت تأهل فعلی را انتخاب کنید: Single مجرد، Married متأهل، Registered partnership شریک ثبت‌شده، Separated جداشده بدون طلاق رسمی، Divorced مطلقه، Widowed همسر فوت‌شده. برای کودکان Single را انتخاب کنید.",
+   "kind": "select",
+   "label": "Marital status",
+   "nullable": false,
+   "options": [
+    "single",
+    "married",
+    "registered_union",
+    "separated",
+    "divorced",
+    "widowed",
+    "other"
+   ],
+   "path": "personal.marital_status",
+   "required": true,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "فقط اگر Other را انتخاب کرده‌اید، وضعیت را کوتاه و به انگلیسی توضیح دهید.",
+   "kind": "string",
+   "label": "Other marital status — specify",
+   "nullable": true,
+   "options": [],
+   "path": "personal.marital_status_other",
+   "required": false,
+   "step": 0
+  },
+  {
+   "group": "personal",
+   "hint_fa": "برای شهروندان ایران، کد ملی ۱۰ رقمی را بدون خط تیره بنویسید. مثال: 0012345678. اگر کشور شما شماره ملی ندارد یا برای کودک صادر نشده، خالی بگذارید.",
+   "kind": "string",
+   "label": "National identity number",
+   "nullable": true,
+   "options": [],
+   "path": "personal.national_id",
+   "required": false,
+   "step": 0
+  },
+  {
+   "group": "passport",
+   "hint_fa": "برای گذرنامه معمولی که بیشتر مردم دارند Ordinary passport را انتخاب کنید. گذرنامه سیاسی (Diplomatic)، خدمت (Service)، رسمی (Official) و ویژه (Special) فقط برای مأموریت‌های دولتی صادر می‌شوند. نوع گذرنامه روی صفحه مشخصات آن درج شده است.",
+   "kind": "select",
+   "label": "Travel document type",
+   "nullable": false,
+   "options": [
+    "ordinary",
+    "diplomatic",
+    "service",
+    "official",
+    "special",
+    "other"
+   ],
+   "path": "passport.type",
+   "required": true,
+   "step": 1
+  },
+  {
+   "group": "passport",
+   "hint_fa": "فقط اگر Other را انتخاب کرده‌اید، نام دقیق سند سفر را بنویسید؛ مثلاً سند سفر پناهندگی.",
+   "kind": "string",
+   "label": "Other document — specify",
+   "nullable": true,
+   "options": [],
+   "path": "passport.type_other",
+   "required": false,
+   "step": 1
+  },
+  {
+   "group": "passport",
+   "hint_fa": "شماره گذرنامه را از صفحه مشخصات بنویسید، با حروف و ارقام دقیقاً مانند گذرنامه. مثال: Y12345678. آن را با کد ملی یا شماره ویزای قبلی اشتباه نگیرید و حرف O را با عدد 0 جابه‌جا ننویسید.",
+   "kind": "string",
+   "label": "Passport / document number",
+   "nullable": false,
+   "options": [],
+   "path": "passport.number",
+   "required": true,
+   "step": 1
+  },
+  {
+   "group": "passport",
+   "hint_fa": "تاریخ صدور میلادی گذرنامه (Date of issue) با قالب روز-ماه-سال. مثال: 15-03-2021. گذرنامه باید در ۱۰ سال گذشته صادر شده باشد.",
+   "kind": "date",
+   "label": "Date of issue",
+   "nullable": false,
+   "options": [],
+   "path": "passport.date_of_issue",
+   "required": true,
+   "step": 1
+  },
+  {
+   "group": "passport",
+   "hint_fa": "تاریخ انقضای میلادی گذرنامه (Date of expiry). گذرنامه باید دست‌کم ۳ ماه پس از تاریخ خروج از منطقه شنگن معتبر باشد. اعتبار ویزای قبلی را اینجا ننویسید.",
+   "kind": "date",
+   "label": "Valid until",
+   "nullable": false,
+   "options": [],
+   "path": "passport.valid_until",
+   "required": true,
+   "step": 1
+  },
+  {
+   "group": "passport",
+   "hint_fa": "کشور صادرکننده گذرنامه را به انگلیسی بنویسید. مثال: IRAN. اگر گذرنامه را سفارت یا کنسولگری کشورتان در خارج صادر کرده، باز هم نام کشور خودتان را بنویسید.",
+   "kind": "string",
+   "label": "Issued by — country",
+   "nullable": false,
+   "options": [],
+   "path": "passport.issued_by",
+   "required": true,
+   "step": 1
+  },
+  {
+   "group": "contact",
+   "hint_fa": "نشانی کامل محل زندگی فعلی خود متقاضی را با حروف لاتین بنویسید: خیابان، کوچه، پلاک، طبقه و واحد، شهر، کد پستی و کشور. مثال: No. 12, Unit 3, Golestan St., Vanak, Tehran 1991234567, Iran. می‌توانید چند خط بنویسید.",
+   "kind": "textarea",
+   "label": "Home address",
+   "nullable": false,
+   "options": [],
+   "path": "contact.home_address",
+   "required": true,
+   "step": 2
+  },
+  {
+   "group": "contact",
+   "hint_fa": "ایمیلی را بنویسید که مرتب بررسی می‌کنید؛ پیام‌های مرکز ویزا یا سفارت به آن ارسال می‌شود. برای کودکان می‌توانید ایمیل والدین را بنویسید. مثال: name@gmail.com",
+   "kind": "string",
+   "label": "Email address",
+   "nullable": false,
+   "options": [],
+   "path": "contact.email",
+   "required": true,
+   "step": 2
+  },
+  {
+   "group": "contact",
+   "hint_fa": "شماره موبایل یا تلفن قابل دسترس را با پیش‌شماره بین‌المللی بنویسید. مثال: +98 912 345 6789. صفر اول شماره را پس از +98 حذف کنید.",
+   "kind": "string",
+   "label": "Telephone number",
+   "nullable": false,
+   "options": [],
+   "path": "contact.phone",
+   "required": true,
+   "step": 2
+  },
+  {
+   "group": "residence",
+   "hint_fa": "اگر در همان کشوری زندگی می‌کنید که تابعیت آن را دارید (مثلاً ایرانی ساکن ایران)، No را انتخاب کنید. Yes فقط برای کسی است که با اجازه اقامت در کشور دیگری زندگی می‌کند. اقامت یا تحصیل بستگان شما در اروپا ربطی به این سؤال ندارد.",
+   "kind": "boolean",
+   "label": "Do you live outside your country of nationality?",
+   "nullable": false,
+   "options": [],
+   "path": "residence.lives_outside_country_of_nationality",
+   "required": true,
+   "step": 2
+  },
+  {
+   "group": "residence",
+   "hint_fa": "نوع مدرک اقامت خود را مطابق کارت یا برچسب اقامت بنویسید. مثال: RESIDENCE PERMIT یا STUDENT RESIDENCE PERMIT.",
+   "kind": "string",
+   "label": "Residence permit type",
+   "nullable": true,
+   "options": [],
+   "path": "residence.permit_type",
+   "required": false,
+   "step": 2
+  },
+  {
+   "group": "residence",
+   "hint_fa": "شماره کارت یا مجوز اقامت را دقیقاً مطابق مدرک بنویسید.",
+   "kind": "string",
+   "label": "Residence permit number",
+   "nullable": true,
+   "options": [],
+   "path": "residence.permit_number",
+   "required": false,
+   "step": 2
+  },
+  {
+   "group": "residence",
+   "hint_fa": "تاریخ پایان اعتبار مجوز اقامت با قالب روز-ماه-سال. بهتر است اجازه اقامت شما تا پس از بازگشت از سفر هم معتبر باشد، چون برای بازگشت به کشور محل اقامت لازم است.",
+   "kind": "date",
+   "label": "Residence permit expiry",
+   "nullable": true,
+   "options": [],
+   "path": "residence.valid_until",
+   "required": false,
+   "step": 2
+  },
+  {
+   "group": "occupation",
+   "hint_fa": "شغل یا وضعیت فعلی را کوتاه و به انگلیسی بنویسید. مثال‌ها: ENGINEER، TEACHER، COMPANY OWNER، EMPLOYEE، STUDENT، PUPIL (دانش‌آموز)، RETIRED (بازنشسته)، HOUSEWIFE یا HOMEMAKER (خانه‌دار)، UNEMPLOYED. برای کودکان خردسال CHILD بنویسید. شغل باید با گواهی اشتغال یا مدارک تحصیلی شما هم‌خوان باشد.",
+   "kind": "string",
+   "label": "Current occupation",
+   "nullable": false,
+   "options": [],
+   "path": "occupation.current_occupation",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "occupation.employer_or_school",
+   "hint_fa": "نام رسمی کارفرما یا شرکت، و برای دانش‌آموز و دانشجو نام مدرسه یا دانشگاه را بنویسید. مثال: UNIVERSITY OF TEHRAN. اگر صاحب کسب‌وکار هستید، نام شرکت یا فروشگاه خود را بنویسید.",
+   "kind": "string",
+   "label": "Employer / school name",
+   "nullable": false,
+   "options": [],
+   "path": "occupation.employer_or_school.name",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "occupation.employer_or_school",
+   "hint_fa": "نشانی محل کار یا مؤسسه آموزشی را با شهر و کشور به لاتین بنویسید.",
+   "kind": "textarea",
+   "label": "Employer / school address",
+   "nullable": false,
+   "options": [],
+   "path": "occupation.employer_or_school.address",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "occupation.employer_or_school",
+   "hint_fa": "شماره تلفن محل کار یا مؤسسه آموزشی را با پیش‌شماره کشور بنویسید. مثال: +98 21 1234 5678.",
+   "kind": "string",
+   "label": "Employer / school telephone",
+   "nullable": true,
+   "options": [],
+   "path": "occupation.employer_or_school.phone",
+   "required": false,
+   "step": 3
+  },
+  {
+   "group": "journey",
+   "hint_fa": "هدف اصلی سفر را انتخاب کنید. Tourism گردشگری؛ Visiting family or friends دیدار خانواده یا دوستان (معمولاً با دعوت‌نامه میزبان)؛ Business کاری؛ Medical درمان؛ Study دوره آموزشی کوتاه تا ۹۰ روز. دانشجو بودن به‌تنهایی هدف سفر را Study نمی‌کند؛ سفر تفریحی دانشجو Tourism است. فقط هدف‌هایی را انتخاب کنید که با مدارک شما ثابت می‌شوند.",
+   "kind": "multi",
+   "label": "Purpose of travel",
+   "nullable": false,
+   "options": [
+    "tourism",
+    "business",
+    "visiting_family_or_friends",
+    "cultural",
+    "sports",
+    "official_visit",
+    "medical",
+    "study",
+    "airport_transit",
+    "other"
+   ],
+   "path": "journey.purposes",
+   "required": true,
+   "step": 4
+  },
+  {
+   "group": "journey",
+   "hint_fa": "فقط اگر Other را انتخاب کرده‌اید، هدف سفر را کوتاه و به انگلیسی توضیح دهید.",
+   "kind": "string",
+   "label": "Other travel purpose — specify",
+   "nullable": true,
+   "options": [],
+   "path": "journey.purpose_other",
+   "required": false,
+   "step": 4
+  },
+  {
+   "group": "journey",
+   "hint_fa": "یک یا دو جمله کوتاه به انگلیسی درباره برنامه سفر بنویسید. مثال: TOURISM IN MADRID AND BARCELONA, 14 NIGHTS. اگر به دیدار کسی می‌روید، نام و نسبت او را بنویسید. متن باید با رزروها و دعوت‌نامه هم‌خوان باشد.",
+   "kind": "textarea",
+   "label": "Additional travel information",
+   "nullable": true,
+   "options": [],
+   "path": "journey.additional_information",
+   "required": false,
+   "step": 4
+  },
+  {
+   "group": "journey",
+   "hint_fa": "کشورهایی را که در این سفر می‌بینید با ویرگول انگلیسی جدا کنید و مقصد اصلی (بیشترین شب‌ها) را اول بنویسید. مثال: SPAIN, FRANCE. این فرم برای وقتی است که مقصد اصلی اسپانیاست.",
+   "kind": "list",
+   "label": "Destination countries",
+   "nullable": false,
+   "options": [],
+   "path": "journey.main_destination",
+   "required": true,
+   "step": 4
+  },
+  {
+   "group": "journey",
+   "hint_fa": "نخستین کشور شنگن که وارد آن می‌شوید؛ یعنی جایی که پرواز شما برای اولین بار در منطقه شنگن فرود می‌آید. اگر از طریق فرانکفورت به مادرید می‌روید، کشور ورود اول GERMANY است.",
+   "kind": "string",
+   "label": "Country of first entry",
+   "nullable": false,
+   "options": [],
+   "path": "journey.first_entry_country",
+   "required": true,
+   "step": 4
+  },
+  {
+   "group": "journey",
+   "hint_fa": "Single entry یعنی یک بار ورود؛ پس از خروج از شنگن ویزا دیگر برای ورود دوباره کار نمی‌کند. اگر در میانه سفر به کشوری خارج از شنگن (مثل بریتانیا یا ترکیه) می‌روید و برمی‌گردید، Two entries یا Multiple entries لازم است. تصمیم نهایی با سفارت است.",
+   "kind": "select",
+   "label": "Entries requested",
+   "nullable": false,
+   "options": [
+    "single",
+    "double",
+    "multiple"
+   ],
+   "path": "journey.entries_requested",
+   "required": true,
+   "step": 4
+  },
+  {
+   "group": "journey",
+   "hint_fa": "تاریخ ورود برنامه‌ریزی‌شده به منطقه شنگن با قالب روز-ماه-سال. مثال: 01-06-2027. باید با بلیت یا رزرو پرواز رفت یکی باشد.",
+   "kind": "date",
+   "label": "Arrival date",
+   "nullable": false,
+   "options": [],
+   "path": "journey.arrival_date",
+   "required": true,
+   "step": 4
+  },
+  {
+   "group": "journey",
+   "hint_fa": "تاریخ خروج برنامه‌ریزی‌شده از منطقه شنگن. باید با پرواز برگشت یکی باشد و کل سفر حداکثر ۹۰ روز شود. دقت کنید تعداد روزها با تعداد شب‌ها یکی نیست؛ ۱ تا ۱۵ ژوئن یعنی ۱۵ روز.",
+   "kind": "date",
+   "label": "Departure date",
+   "nullable": false,
+   "options": [],
+   "path": "journey.departure_date",
+   "required": true,
+   "step": 4
+  },
+  {
+   "group": "previous_biometrics",
+   "hint_fa": "Yes فقط اگر قبلاً برای درخواست ویزای شنگن اثر انگشت داده‌اید (معمولاً از سال ۲۰۱۵ به بعد در مرکز ویزا). داشتن ویزای قبلی به‌تنهایی کافی نیست. اگر مطمئن نیستید خالی بگذارید؛ PDF به‌عنوان پیش‌نویس ساخته می‌شود تا پیش از ارسال آن را بررسی کنید.",
+   "kind": "boolean",
+   "label": "Were Schengen fingerprints collected before?",
+   "nullable": true,
+   "options": [],
+   "path": "previous_biometrics.fingerprints_taken",
+   "required": false,
+   "step": 5
+  },
+  {
+   "group": "previous_biometrics",
+   "hint_fa": "فقط اگر تاریخ دقیق انگشت‌نگاری را می‌دانید وارد کنید؛ معمولاً همان روز وقت مرکز ویزا برای درخواست قبلی است. تاریخ حدسی ننویسید.",
+   "kind": "date",
+   "label": "Fingerprint collection date, if known",
+   "nullable": true,
+   "options": [],
+   "path": "previous_biometrics.date",
+   "required": false,
+   "step": 5
+  },
+  {
+   "group": "previous_biometrics",
+   "hint_fa": "شماره برچسب ویزای قبلی شنگن، اگر آن را دارید. این شماره معمولاً با رنگ قرمز در گوشه بالا سمت راست برچسب ویزا چاپ شده است. اگر نمی‌دانید خالی بگذارید.",
+   "kind": "string",
+   "label": "Visa sticker number, if known",
+   "nullable": true,
+   "options": [],
+   "path": "previous_biometrics.visa_sticker_number",
+   "required": false,
+   "step": 5
+  },
+  {
+   "group": "previous_biometrics",
+   "hint_fa": "کشوری که ویزای شنگن قبلی شما را صادر کرده است. مثال: ITALY. این اطلاعات به‌عنوان یادداشت سفر در PDF می‌آید.",
+   "kind": "string",
+   "label": "Previous visa issuing country",
+   "nullable": true,
+   "options": [],
+   "path": "previous_biometrics.visa_issuing_country",
+   "required": false,
+   "step": 5
+  },
+  {
+   "group": "previous_biometrics",
+   "hint_fa": "تاریخ ورود شما با ویزای قبلی، اگر می‌دانید. این تاریخ با تاریخ انگشت‌نگاری فرق دارد و جای آن را نمی‌گیرد.",
+   "kind": "date",
+   "label": "Previous visa entry date",
+   "nullable": true,
+   "options": [],
+   "path": "previous_biometrics.visa_entry_date",
+   "required": false,
+   "step": 5
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "کشور این اقامتگاه را به انگلیسی بنویسید. مثال: SPAIN.",
+   "kind": "string",
+   "label": "Country",
+   "nullable": true,
+   "options": [],
+   "path": "accommodation.country",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "شهر این اقامتگاه را به انگلیسی بنویسید. مثال: MADRID. اگر چند اقامتگاه دارید، نام شهر در PDF کنار هر کدام می‌آید تا قابل تشخیص باشند.",
+   "kind": "string",
+   "label": "City",
+   "nullable": true,
+   "options": [],
+   "path": "accommodation.city",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "تاریخ ورود به این اقامتگاه با قالب روز-ماه-سال. باید در بازه تاریخ ورود و خروج سفر باشد.",
+   "kind": "date",
+   "label": "Check-in date",
+   "nullable": true,
+   "options": [],
+   "path": "accommodation.check_in",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "تاریخ خروج از این اقامتگاه. باید پس از تاریخ ورود به آن باشد. اقامتگاه بعدی معمولاً از همین روز شروع می‌شود.",
+   "kind": "date",
+   "label": "Check-out date",
+   "nullable": true,
+   "options": [],
+   "path": "accommodation.check_out",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "شماره یا کد تأیید رزرو از ایمیل تأییدیه. مثال: HMABC12345. این کد در PDF کنار تاریخ‌های اقامت چاپ می‌شود.",
+   "kind": "string",
+   "label": "Booking confirmation code",
+   "nullable": true,
+   "options": [],
+   "path": "accommodation.confirmation_code",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "برای فایل‌های قدیمی: تاریخ‌ها و کد رزرو هر شهر. در فرم جدید از قسمت‌های جداگانه Check-in، Check-out و کد تأیید استفاده کنید.",
+   "kind": "textarea",
+   "label": "Booking dates and confirmation codes",
+   "nullable": true,
+   "options": [],
+   "path": "accommodation.booking_details",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "Hotel برای هتل و هتل‌آپارتمان؛ Temporary accommodation برای خانه یا آپارتمان اجاره‌ای کوتاه‌مدت مانند Airbnb یا Booking؛ Inviting person وقتی نزد یک میزبان شخصی (بستگان یا دوستان) می‌مانید و او دعوت‌نامه داده است.",
+   "kind": "select",
+   "label": "Accommodation type",
+   "nullable": false,
+   "options": [
+    "hotel",
+    "inviting_person",
+    "temporary_accommodation"
+   ],
+   "path": "accommodation.type",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "نام هتل، یا نام میزبان یا صاحب‌خانه را مطابق تأییدیه رزرو یا دعوت‌نامه بنویسید. برای Airbnb نام میزبان یا عنوان آگهی در تأییدیه را بنویسید؛ کلمه Airbnb به‌تنهایی کافی نیست.",
+   "kind": "textarea",
+   "label": "Host / accommodation name",
+   "nullable": false,
+   "options": [],
+   "path": "accommodation.name",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "نشانی کامل اقامتگاه را از تأییدیه رزرو کپی کنید: خیابان، پلاک، کد پستی و شهر. مثال: Calle Mayor 10, 28013 Madrid. نشانی را حدس نزنید؛ برای Airbnb نشانی دقیق معمولاً پس از تأیید رزرو نمایش داده می‌شود.",
+   "kind": "textarea",
+   "label": "Accommodation address",
+   "nullable": false,
+   "options": [],
+   "path": "accommodation.address",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "ایمیل هتل یا میزبان، اگر در تأییدیه رزرو یا دعوت‌نامه آمده است. اگر ندارید خالی بگذارید.",
+   "kind": "textarea",
+   "label": "Accommodation contact email",
+   "nullable": true,
+   "options": [],
+   "path": "accommodation.email",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "accommodation",
+   "hint_fa": "شماره تلفن هتل یا میزبان با پیش‌شماره کشور. مثال: +34 912 345 678.",
+   "kind": "textarea",
+   "label": "Accommodation telephone",
+   "nullable": false,
+   "options": [],
+   "path": "accommodation.phone",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "expenses",
+   "hint_fa": "Applicant یعنی خودتان همه هزینه‌ها را می‌پردازید و گردش حساب خودتان را ارائه می‌کنید. Sponsor یعنی شخص یا شرکت دیگری همه هزینه‌ها را تقبل کرده است (معمولاً با نامه تعهد و مدارک مالی او). Shared یعنی بخشی را خودتان و بخشی را حامی می‌پردازد. نسبت خانوادگی به‌تنهایی به معنی حمایت مالی نیست.",
+   "kind": "select",
+   "label": "Who pays for the trip?",
+   "nullable": false,
+   "options": [
+    "applicant",
+    "sponsor",
+    "shared"
+   ],
+   "path": "expenses.paid_by",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "expenses",
+   "hint_fa": "روش‌هایی را انتخاب کنید که واقعاً برای پرداخت هزینه‌های سفر استفاده می‌کنید: Cash پول نقد، Credit card کارت اعتباری بین‌المللی، Prepaid accommodation اقامتگاهی که از قبل پرداخت شده، Prepaid transport بلیتی که از قبل خریده‌اید. گزینه‌های پیش‌پرداخت را فقط وقتی انتخاب کنید که واقعاً پرداخت شده‌اند.",
+   "kind": "multi",
+   "label": "Applicant’s means of payment",
+   "nullable": false,
+   "options": [
+    "cash",
+    "travellers_cheques",
+    "credit_card",
+    "prepaid_accommodation",
+    "prepaid_transport",
+    "other"
+   ],
+   "path": "expenses.applicant_means",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "expenses",
+   "hint_fa": "حمایت‌هایی را انتخاب کنید که حامی واقعاً فراهم می‌کند: Cash پول نقد، Accommodation provided فراهم کردن محل اقامت، All expenses covered پرداخت همه هزینه‌ها، Prepaid transport بلیت پیش‌خرید. «همه هزینه‌ها» با پرداخت مشترک (Shared) سازگار نیست.",
+   "kind": "multi",
+   "label": "Sponsor’s means of support",
+   "nullable": false,
+   "options": [
+    "cash",
+    "accommodation_provided",
+    "all_expenses_covered",
+    "prepaid_transport",
+    "other"
+   ],
+   "path": "expenses.sponsor_means",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "expenses",
+   "hint_fa": "فقط اگر Other را انتخاب کرده‌اید، روش پرداخت را کوتاه به انگلیسی توضیح دهید.",
+   "kind": "string",
+   "label": "Applicant — other means",
+   "nullable": true,
+   "options": [],
+   "path": "expenses.applicant_other",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "expenses",
+   "hint_fa": "فقط اگر Other را انتخاب کرده‌اید، نوع حمایت حامی را کوتاه به انگلیسی توضیح دهید.",
+   "kind": "string",
+   "label": "Sponsor — other means",
+   "nullable": true,
+   "options": [],
+   "path": "expenses.sponsor_other",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "expenses",
+   "hint_fa": "حامی کیست؟ اگر میزبان یا اقامتگاهی است که در بخش اقامت (۳۰) آمده، گزینه field 30 را انتخاب کنید. اگر شرکت دعوت‌کننده بخش ۳۱ است، field 31 را انتخاب کنید. در غیر این صورت Other را انتخاب و نام حامی را بنویسید.",
+   "kind": "select",
+   "label": "Sponsor identification",
+   "nullable": false,
+   "options": [
+    "field_30",
+    "field_31",
+    "other"
+   ],
+   "path": "expenses.sponsor.reference",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "expenses",
+   "hint_fa": "نام کامل حامی (شخص یا شرکت) را به لاتین بنویسید. مثال: ALI AHMADI (BROTHER).",
+   "kind": "string",
+   "label": "Other sponsor’s name",
+   "nullable": true,
+   "options": [],
+   "path": "expenses.sponsor.name",
+   "required": false,
+   "step": 6
+  },
+  {
+   "group": "application",
+   "hint_fa": "شهری که فرم را در آن امضا می‌کنید، معمولاً شهری که در آن درخواست می‌دهید. مثال: TEHRAN.",
+   "kind": "string",
+   "label": "Place of application / signing",
+   "nullable": false,
+   "options": [],
+   "path": "application.place",
+   "required": true,
+   "step": 7
+  },
+  {
+   "group": "application",
+   "hint_fa": "تاریخ امضای فرم با قالب روز-ماه-سال؛ معمولاً روز وقت مرکز ویزا یا چند روز پیش از آن. این تاریخ باید پیش از تاریخ سفر باشد.",
+   "kind": "date",
+   "label": "Application / signing date",
+   "nullable": false,
+   "options": [],
+   "path": "application.date",
+   "required": true,
+   "step": 7
+  },
+  {
+   "group": "application",
+   "hint_fa": "پیشنهاد می‌شود No را انتخاب کنید و پس از چاپ، فرم را با خودکار امضا کنید؛ بیشتر مراکز ویزا امضای دستی می‌خواهند. Yes فقط برای درج تصویر امضا در PDF است.",
+   "kind": "boolean",
+   "label": "Insert a signature image?",
+   "nullable": false,
+   "options": [],
+   "path": "application.signature.enabled",
+   "required": false,
+   "step": 7
+  },
+  {
+   "group": "application",
+   "hint_fa": "تصویر امضا با فرمت PNG یا JPEG و حداکثر 1.5 مگابایت، ترجیحاً با پس‌زمینه سفید. فایل فقط روی همین دستگاه استفاده می‌شود و پس از وارد کردن JSON باید دوباره انتخاب شود.",
+   "kind": "file",
+   "label": "Signature image",
+   "nullable": true,
+   "options": [],
+   "path": "application.signature.image_path",
+   "required": false,
+   "step": 7
+  },
+  {
+   "group": "guardian",
+   "hint_fa": "نام خانوادگی پدر، مادر یا سرپرست قانونی که برای متقاضی زیر ۱۸ سال اختیار والدینی دارد. اگر هر دو والد سرپرست هستند، معمولاً یکی را اینجا می‌نویسید و رضایت‌نامه والد دیگر را جداگانه ارائه می‌کنید.",
+   "kind": "string",
+   "label": "Guardian’s surname",
+   "nullable": false,
+   "options": [],
+   "path": "guardian.surname",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "guardian",
+   "hint_fa": "نام کوچک سرپرست را مطابق گذرنامه یا کارت شناسایی او به لاتین بنویسید.",
+   "kind": "string",
+   "label": "Guardian’s given names",
+   "nullable": false,
+   "options": [],
+   "path": "guardian.given_names",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "guardian",
+   "hint_fa": "فقط اگر نشانی سرپرست با نشانی کودک فرق دارد آن را بنویسید؛ اگر یکسان است خالی بگذارید.",
+   "kind": "textarea",
+   "label": "Guardian’s address, if different",
+   "nullable": true,
+   "options": [],
+   "path": "guardian.address",
+   "required": false,
+   "step": 3
+  },
+  {
+   "group": "guardian",
+   "hint_fa": "شماره تماس سرپرست با پیش‌شماره کشور. مثال: +98 912 345 6789.",
+   "kind": "string",
+   "label": "Guardian’s telephone",
+   "nullable": false,
+   "options": [],
+   "path": "guardian.phone",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "guardian",
+   "hint_fa": "ایمیلی که سرپرست مرتب بررسی می‌کند.",
+   "kind": "string",
+   "label": "Guardian’s email",
+   "nullable": false,
+   "options": [],
+   "path": "guardian.email",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "guardian",
+   "hint_fa": "تابعیت سرپرست به انگلیسی. مثال: IRANIAN.",
+   "kind": "string",
+   "label": "Guardian’s nationality",
+   "nullable": false,
+   "options": [],
+   "path": "guardian.nationality",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "eu_family_member",
+   "hint_fa": "نام خانوادگی عضو خانواده‌ای که تابعیت اتحادیه اروپا، منطقه اقتصادی اروپا یا سوئیس دارد، مطابق گذرنامه یا کارت شناسایی او.",
+   "kind": "string",
+   "label": "EU / EEA / Swiss relative’s surname",
+   "nullable": false,
+   "options": [],
+   "path": "eu_family_member.surname",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "eu_family_member",
+   "hint_fa": "نام کوچک همان عضو خانواده مطابق مدرک او.",
+   "kind": "string",
+   "label": "Relative’s given names",
+   "nullable": false,
+   "options": [],
+   "path": "eu_family_member.given_names",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "eu_family_member",
+   "hint_fa": "تاریخ تولد میلادی همان عضو خانواده با قالب روز-ماه-سال.",
+   "kind": "date",
+   "label": "Relative’s date of birth",
+   "nullable": false,
+   "options": [],
+   "path": "eu_family_member.date_of_birth",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "eu_family_member",
+   "hint_fa": "تابعیت اروپایی او را بنویسید. مثال: SPANISH. داشتن ویزا یا اجازه اقامت در اروپا تابعیت نیست.",
+   "kind": "string",
+   "label": "Relative’s nationality",
+   "nullable": false,
+   "options": [],
+   "path": "eu_family_member.nationality",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "eu_family_member",
+   "hint_fa": "شماره گذرنامه یا کارت شناسایی ملی همان عضو خانواده.",
+   "kind": "string",
+   "label": "Relative’s passport / ID number",
+   "nullable": false,
+   "options": [],
+   "path": "eu_family_member.document_number",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "eu_family_member",
+   "hint_fa": "نسبت متقاضی با آن شهروند اروپایی: Spouse همسر، Child فرزند، Grandchild نوه، Dependent ascendant والد یا پدربزرگ و مادربزرگ تحت تکفل، Registered partnership شریک ثبت‌شده.",
+   "kind": "select",
+   "label": "Relationship to that relative",
+   "nullable": false,
+   "options": [
+    "spouse",
+    "child",
+    "grandchild",
+    "dependent_ascendant",
+    "registered_partnership",
+    "other"
+   ],
+   "path": "eu_family_member.relationship",
+   "required": true,
+   "step": 3
+  },
+  {
+   "group": "eu_family_member",
+   "hint_fa": "فقط اگر Other را انتخاب کرده‌اید، نسبت را کوتاه به انگلیسی توضیح دهید.",
+   "kind": "string",
+   "label": "Other relationship — specify",
+   "nullable": true,
+   "options": [],
+   "path": "eu_family_member.relationship_other",
+   "required": false,
+   "step": 3
+  },
+  {
+   "group": "eu_family_exemption",
+   "hint_fa": "Yes فقط برای عضو خانواده یک شهروند اتحادیه اروپا، منطقه اقتصادی اروپا یا سوئیس که از حق آزادی رفت‌وآمد استفاده می‌کند؛ مثلاً همسر ایرانیِ یک شهروند اسپانیا که با او سفر می‌کند یا به او می‌پیوندد. در این صورت بخش‌های ستاره‌دار ۲۱، ۲۲، ۳۰، ۳۱ و ۳۲ خالی می‌مانند و مدرک نسبت خانوادگی لازم است. برای بیشتر متقاضیان پاسخ No است.",
+   "kind": "boolean",
+   "label": "Use the EU-family exemption?",
+   "nullable": false,
+   "options": [],
+   "path": "eu_family_exemption",
+   "required": false,
+   "step": 3
+  },
+  {
+   "group": "inviting_company",
+   "hint_fa": "نام کامل و رسمی شرکت یا سازمانی که شما را دعوت کرده، دقیقاً مطابق دعوت‌نامه. کارفرمای خود شما یا محل کار بستگان شما دعوت‌کننده محسوب نمی‌شوند.",
+   "kind": "string",
+   "label": "Inviting company / organisation",
+   "nullable": false,
+   "options": [],
+   "path": "inviting_company.name",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "inviting_company",
+   "hint_fa": "نشانی کامل شرکت یا سازمان دعوت‌کننده، مطابق سربرگ دعوت‌نامه.",
+   "kind": "textarea",
+   "label": "Inviting company address",
+   "nullable": false,
+   "options": [],
+   "path": "inviting_company.address",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "inviting_company",
+   "hint_fa": "نام خانوادگی شخصی در شرکت که دعوت‌نامه را امضا کرده یا مسئول دعوت شماست.",
+   "kind": "string",
+   "label": "Company contact’s surname",
+   "nullable": false,
+   "options": [],
+   "path": "inviting_company.contact.surname",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "inviting_company",
+   "hint_fa": "نام کوچک شخص تماس در شرکت دعوت‌کننده.",
+   "kind": "string",
+   "label": "Company contact’s given names",
+   "nullable": false,
+   "options": [],
+   "path": "inviting_company.contact.given_names",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "inviting_company",
+   "hint_fa": "نشانی شخص تماس؛ معمولاً همان نشانی شرکت است.",
+   "kind": "textarea",
+   "label": "Company contact’s address",
+   "nullable": false,
+   "options": [],
+   "path": "inviting_company.contact.address",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "inviting_company",
+   "hint_fa": "ایمیل کاری شخص تماس در شرکت دعوت‌کننده.",
+   "kind": "string",
+   "label": "Company contact’s email",
+   "nullable": false,
+   "options": [],
+   "path": "inviting_company.contact.email",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "inviting_company",
+   "hint_fa": "شماره تلفن شرکت یا سازمان دعوت‌کننده با پیش‌شماره کشور.",
+   "kind": "string",
+   "label": "Inviting company telephone",
+   "nullable": false,
+   "options": [],
+   "path": "inviting_company.phone",
+   "required": true,
+   "step": 6
+  },
+  {
+   "group": "final_destination_permit",
+   "hint_fa": "کشوری که ویزا یا مجوز ورود به مقصد نهایی شما (خارج از شنگن) را صادر کرده است. فقط برای ترانزیت؛ ویزای شنگن قبلی را اینجا ننویسید.",
+   "kind": "string",
+   "label": "Final-destination permit — issued by",
+   "nullable": false,
+   "options": [],
+   "path": "final_destination_permit.issued_by",
+   "required": true,
+   "step": 5
+  },
+  {
+   "group": "final_destination_permit",
+   "hint_fa": "تاریخ شروع اعتبار ویزا یا مجوز ورود به مقصد نهایی، با قالب روز-ماه-سال.",
+   "kind": "date",
+   "label": "Entry permit valid from",
+   "nullable": false,
+   "options": [],
+   "path": "final_destination_permit.valid_from",
+   "required": true,
+   "step": 5
+  },
+  {
+   "group": "final_destination_permit",
+   "hint_fa": "تاریخ پایان اعتبار همان ویزا یا مجوز ورود به مقصد نهایی، با قالب روز-ماه-سال.",
+   "kind": "date",
+   "label": "Entry permit valid until",
+   "nullable": false,
+   "options": [],
+   "path": "final_destination_permit.valid_until",
+   "required": true,
+   "step": 5
+  }
+ ],
+ "groups": [
+  {
+   "number": "01–11",
+   "path": "personal",
+   "step": 0,
+   "title": "As written in your passport"
+  },
+  {
+   "number": "12–16",
+   "path": "passport",
+   "step": 1,
+   "title": "Travel document"
+  },
+  {
+   "number": "19",
+   "path": "contact",
+   "step": 2,
+   "title": "Your contact details"
+  },
+  {
+   "number": "20",
+   "path": "residence",
+   "step": 2,
+   "title": "Country of residence"
+  },
+  {
+   "number": "17–18",
+   "path": "eu_family_exemption",
+   "step": 3,
+   "title": "Family circumstances"
+  },
+  {
+   "hint_fa": "برای متقاضی زیر ۱۸ سال در تاریخ درخواست، مشخصات پدر، مادر یا سرپرست قانونی لازم است و او فرم را امضا می‌کند. اگر تاریخ تولد و تاریخ درخواست را وارد کرده باشید، این بخش برای بزرگسالان خودکار پنهان می‌شود.",
+   "number": "10",
+   "optional": true,
+   "path": "guardian",
+   "question": "Does this applicant need a guardian section?",
+   "step": 3,
+   "title": "Parental authority / legal guardian"
+  },
+  {
+   "hint_fa": "فقط اگر متقاضی همسر، فرزند، نوه، والد تحت تکفل یا شریک ثبت‌شده یک شهروند اتحادیه اروپا، منطقه اقتصادی اروپا یا سوئیس است Yes را انتخاب کنید. داشتن اقامت، ویزای دانشجویی یا کار در اروپا به معنی تابعیت اروپایی نیست.",
+   "number": "17–18",
+   "optional": true,
+   "path": "eu_family_member",
+   "question": "Do EU / EEA / Swiss family-member details apply?",
+   "step": 3,
+   "title": "EU / EEA / Swiss family member"
+  },
+  {
+   "number": "21",
+   "path": "occupation",
+   "step": 3,
+   "title": "Work or study"
+  },
+  {
+   "hint_fa": "اگر شاغل هستید نام کارفرما یا شرکت خود را بنویسید؛ اگر دانش‌آموز یا دانشجو هستید نام مدرسه یا دانشگاه. برای بازنشسته، خانه‌دار یا بیکار No را انتخاب کنید.",
+   "number": "22",
+   "optional": true,
+   "path": "occupation.employer_or_school",
+   "question": "Is there an employer, school or university to list?",
+   "step": 3,
+   "title": "Employer or educational establishment"
+  },
+  {
+   "number": "23–27",
+   "path": "journey",
+   "step": 4,
+   "title": "The trip you are applying for"
+  },
+  {
+   "number": "28",
+   "path": "previous_biometrics",
+   "step": 5,
+   "title": "Previous Schengen fingerprints"
+  },
+  {
+   "hint_fa": "تقریباً همه متقاضیان سفر توریستی یا خانوادگی No را انتخاب می‌کنند. Yes فقط برای کسی است که از منطقه شنگن به کشور سومی عبور می‌کند و برای آن کشور ویزا یا مجوز ورود دارد.",
+   "number": "29",
+   "optional": true,
+   "path": "final_destination_permit",
+   "question": "Does a final-destination entry permit apply?",
+   "step": 5,
+   "title": "Final-destination entry permit"
+  },
+  {
+   "hint_fa": "اگر در هتل، خانه اجاره‌ای (مانند Airbnb) یا نزد میزبان شخصی اقامت دارید Yes را انتخاب کنید. برای سفر توریستی معمولاً این بخش لازم است؛ اگر شرکتی شما را دعوت کرده و محل اقامت را خودش تأمین می‌کند، بخش شرکت دعوت‌کننده را پر کنید.",
+   "number": "30",
+   "optional": true,
+   "path": "accommodation",
+   "question": "List accommodation or an inviting person?",
+   "step": 6,
+   "title": "Where you will stay"
+  },
+  {
+   "hint_fa": "فقط برای سفر کاری، همایش، نمایشگاه یا آموزشی که شرکت یا سازمانی در اروپا با دعوت‌نامه رسمی شما را دعوت کرده است. برای سفر توریستی یا دیدار خانواده No را انتخاب کنید.",
+   "number": "31",
+   "optional": true,
+   "path": "inviting_company",
+   "question": "Is a company or organisation inviting you?",
+   "step": 6,
+   "title": "Inviting company"
+  },
+  {
+   "number": "32",
+   "path": "expenses",
+   "step": 6,
+   "title": "Travel and living costs"
+  },
+  {
+   "number": "PAGE 4",
+   "path": "application",
+   "step": 7,
+   "title": "Place, date & signature"
+  }
+ ],
+ "layout": {
+  "checkboxes": {
+   "applicant.cash": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     56.424,
+     212.44,
+     60.124,
+     216.14
+    ]
+   },
+   "applicant.credit_card": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     56.424,
+     230.8,
+     60.124,
+     234.5
+    ]
+   },
+   "applicant.other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     56.424,
+     258.43,
+     60.124,
+     262.13
+    ]
+   },
+   "applicant.prepaid_accommodation": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     56.424,
+     240.04,
+     60.124,
+     243.74
+    ]
+   },
+   "applicant.prepaid_transport": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     56.424,
+     249.16,
+     60.124,
+     252.86
+    ]
+   },
+   "applicant.travellers_cheques": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     56.424,
+     221.56,
+     60.124,
+     225.26
+    ]
+   },
+   "entries.double": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     114.62,
+     499.29,
+     118.32,
+     502.99
+    ]
+   },
+   "entries.multiple": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     176.57,
+     499.29,
+     180.27,
+     502.99
+    ]
+   },
+   "entries.single": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     56.424,
+     499.29,
+     60.124,
+     502.99
+    ]
+   },
+   "fingerprints.no": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     99.384,
+     573.45,
+     103.084,
+     577.15
+    ]
+   },
+   "fingerprints.yes": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     127.94,
+     573.45,
+     131.64,
+     577.15
+    ]
+   },
+   "marital.divorced": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     239.33,
+     444.09,
+     243.03,
+     447.79
+    ]
+   },
+   "marital.married": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     300.19,
+     425.59,
+     303.89,
+     429.29
+    ]
+   },
+   "marital.other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     391.983,
+     444.09,
+     395.683,
+     447.79
+    ]
+   },
+   "marital.registered_union": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     366.79,
+     425.59,
+     370.49,
+     429.29
+    ]
+   },
+   "marital.separated": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     295.87,
+     434.83,
+     299.57,
+     438.53
+    ]
+   },
+   "marital.single": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     239.33,
+     425.59,
+     243.03,
+     429.29
+    ]
+   },
+   "marital.widowed": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     322.347,
+     444.09,
+     326.047,
+     447.79
+    ]
+   },
+   "passport.diplomatic": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     190.01,
+     601.89,
+     193.71,
+     605.59
+    ]
+   },
+   "passport.official": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     87.624,
+     611.13,
+     91.324,
+     614.83
+    ]
+   },
+   "passport.ordinary": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     56.424,
+     601.89,
+     60.124,
+     605.59
+    ]
+   },
+   "passport.other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     330.43,
+     611.13,
+     334.13,
+     614.83
+    ]
+   },
+   "passport.service": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     339.07,
+     601.89,
+     342.77,
+     605.59
+    ]
+   },
+   "passport.special": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     207.77,
+     611.13,
+     211.47,
+     614.83
+    ]
+   },
+   "payer.applicant": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     56.424,
+     175.6,
+     60.124,
+     179.3
+    ]
+   },
+   "payer.sponsor": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     278.93,
+     175.6,
+     282.63,
+     179.3
+    ]
+   },
+   "purpose.airport_transit": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     269.69,
+     349.75,
+     273.39,
+     353.45
+    ]
+   },
+   "purpose.business": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     116.42,
+     340.51,
+     120.12,
+     344.21
+    ]
+   },
+   "purpose.cultural": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     364.508,
+     340.51,
+     368.208,
+     344.21
+    ]
+   },
+   "purpose.medical": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     91.824,
+     349.75,
+     95.524,
+     353.45
+    ]
+   },
+   "purpose.official_visit": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     486.58,
+     340.51,
+     490.28,
+     344.21
+    ]
+   },
+   "purpose.other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     396.07,
+     349.75,
+     399.77,
+     353.45
+    ]
+   },
+   "purpose.sports": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     428.14,
+     340.51,
+     431.84,
+     344.21
+    ]
+   },
+   "purpose.study": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     212.33,
+     349.75,
+     216.03,
+     353.45
+    ]
+   },
+   "purpose.tourism": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     49.08,
+     340.51,
+     52.78,
+     344.21
+    ]
+   },
+   "purpose.visiting_family_or_friends": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     184.25,
+     340.51,
+     187.95,
+     344.21
+    ]
+   },
+   "relationship.child": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     112.193,
+     117.16,
+     115.893,
+     120.86
+    ]
+   },
+   "relationship.dependent_ascendant": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     232.49,
+     117.16,
+     236.19,
+     120.86
+    ]
+   },
+   "relationship.grandchild": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     161.42,
+     117.16,
+     165.12,
+     120.86
+    ]
+   },
+   "relationship.other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     89.184,
+     126.4,
+     92.884,
+     130.1
+    ]
+   },
+   "relationship.registered_partnership": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     388.51,
+     117.16,
+     392.21,
+     120.86
+    ]
+   },
+   "relationship.spouse": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     49.08,
+     117.16,
+     52.78,
+     120.86
+    ]
+   },
+   "residence.no": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     49.08,
+     219.4,
+     52.78,
+     223.1
+    ]
+   },
+   "residence.yes": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     49.08,
+     228.64,
+     52.78,
+     232.34
+    ]
+   },
+   "sex.female": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     109.94,
+     425.59,
+     113.64,
+     429.29
+    ]
+   },
+   "sex.male": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     56.424,
+     425.59,
+     60.124,
+     429.29
+    ]
+   },
+   "sponsor.accommodation_provided": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     292.37,
+     249.16,
+     296.07,
+     252.86
+    ]
+   },
+   "sponsor.all_expenses_covered": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     292.37,
+     258.43,
+     296.07,
+     262.13
+    ]
+   },
+   "sponsor.cash": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     292.13,
+     240.04,
+     295.83,
+     243.74
+    ]
+   },
+   "sponsor.other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     293.21,
+     286.03,
+     296.91,
+     289.73
+    ]
+   },
+   "sponsor.prepaid_transport": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     292.49,
+     276.79,
+     296.19,
+     280.49
+    ]
+   },
+   "sponsor_reference.form": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     323.59,
+     193.96,
+     327.29,
+     197.66
+    ]
+   },
+   "sponsor_reference.other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     324.55,
+     203.2,
+     328.25,
+     206.9
+    ]
+   }
+  },
+  "fields": {
+   "accommodation.address": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": 1.2,
+    "min_font_size": 5.5,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     735,
+     294,
+     776
+    ]
+   },
+   "accommodation.name": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": 1.2,
+    "min_font_size": 5.5,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     670,
+     543,
+     692
+    ]
+   },
+   "accommodation.phone": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     300,
+     708,
+     543,
+     742
+    ]
+   },
+   "application.place_date": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 3,
+    "rect": [
+     51,
+     479,
+     294,
+     542
+    ]
+   },
+   "contact.email": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     182,
+     294,
+     194
+    ]
+   },
+   "contact.home_address": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": 1.2,
+    "min_font_size": 5.5,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     162,
+     294,
+     181
+    ]
+   },
+   "contact.phone": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     300,
+     154,
+     543,
+     191
+    ]
+   },
+   "eu_family_member.date_of_birth": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     71,
+     211,
+     92
+    ]
+   },
+   "eu_family_member.document_number": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     382,
+     71,
+     543,
+     92
+    ]
+   },
+   "eu_family_member.given_names": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     252,
+     727,
+     448,
+     758
+    ]
+   },
+   "eu_family_member.nationality": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     217,
+     71,
+     377,
+     92
+    ]
+   },
+   "eu_family_member.relationship_other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     140,
+     124,
+     543,
+     139
+    ]
+   },
+   "eu_family_member.surname": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     727,
+     247,
+     758
+    ]
+   },
+   "expenses.applicant_other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     58,
+     267,
+     275,
+     298
+    ]
+   },
+   "expenses.sponsor.name": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     397,
+     199.5,
+     544,
+     207.8
+    ]
+   },
+   "expenses.sponsor_other": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     445,
+     283,
+     544,
+     299
+    ]
+   },
+   "final_destination_permit.issued_by": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     129,
+     623.2,
+     229,
+     632.8
+    ]
+   },
+   "final_destination_permit.valid_from": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     313,
+     623.2,
+     404,
+     632.8
+    ]
+   },
+   "final_destination_permit.valid_until": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     445,
+     623.2,
+     542,
+     632.8
+    ]
+   },
+   "guardian": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     508,
+     448,
+     549
+    ]
+   },
+   "inviting_company.contact": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     51,
+     101,
+     294,
+     138
+    ]
+   },
+   "inviting_company.name_address": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     51,
+     58.4,
+     543,
+     68.4
+    ]
+   },
+   "inviting_company.phone": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 2,
+    "rect": [
+     300,
+     92,
+     543,
+     138
+    ]
+   },
+   "journey.additional_information": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": 1.2,
+    "min_font_size": 5.5,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     384,
+     543,
+     402.1
+    ]
+   },
+   "journey.arrival_date": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     523.4,
+     190,
+     532.4
+    ]
+   },
+   "journey.departure_date": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     102,
+     547,
+     245,
+     558
+    ]
+   },
+   "journey.first_entry_country": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     300,
+     416,
+     543,
+     474
+    ]
+   },
+   "journey.main_destination": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     434,
+     294,
+     474
+    ]
+   },
+   "journey.purpose_other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     358,
+     543,
+     371
+    ]
+   },
+   "occupation.current_occupation": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     265,
+     543,
+     278
+    ]
+   },
+   "occupation.employer_or_school": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     51,
+     300.5,
+     543,
+     317.5
+    ]
+   },
+   "passport.date_of_issue": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     172,
+     661,
+     250,
+     675
+    ]
+   },
+   "passport.issued_by": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     334,
+     661,
+     448,
+     675
+    ]
+   },
+   "passport.number": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     661,
+     167,
+     675
+    ]
+   },
+   "passport.type_other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     627,
+     448,
+     638
+    ]
+   },
+   "passport.valid_until": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     255,
+     661,
+     329,
+     675
+    ]
+   },
+   "personal.country_of_birth": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     185,
+     351,
+     313,
+     373
+    ]
+   },
+   "personal.current_nationality": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     319,
+     322,
+     448,
+     337
+    ]
+   },
+   "personal.date_of_birth": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     324,
+     180,
+     338
+    ]
+   },
+   "personal.given_names": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     277,
+     448,
+     298
+    ]
+   },
+   "personal.marital_status_other": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     338,
+     452,
+     448,
+     466
+    ]
+   },
+   "personal.national_id": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     563,
+     448,
+     577
+    ]
+   },
+   "personal.nationality_at_birth": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     319,
+     359,
+     448,
+     374
+    ]
+   },
+   "personal.other_nationalities": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     319,
+     387,
+     448,
+     401
+    ]
+   },
+   "personal.place_of_birth": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     185,
+     314,
+     313,
+     336
+    ]
+   },
+   "personal.surname": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     202,
+     448,
+     224
+    ]
+   },
+   "personal.surname_at_birth": {
+    "alignment": "left",
+    "font_size": 9,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 0,
+    "rect": [
+     51,
+     239,
+     448,
+     261
+    ]
+   },
+   "previous_biometrics.date": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     162,
+     585.8,
+     228,
+     595.5
+    ]
+   },
+   "previous_biometrics.visa_sticker_number": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     435,
+     585.8,
+     543,
+     595.5
+    ]
+   },
+   "residence.permit_number": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     473,
+     223.5,
+     535,
+     232.4
+    ]
+   },
+   "residence.permit_type": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     342,
+     223.5,
+     433,
+     232.4
+    ]
+   },
+   "residence.valid_until": {
+    "alignment": "left",
+    "font_size": 7,
+    "line_spacing": null,
+    "min_font_size": 6,
+    "multiline": true,
+    "page": 1,
+    "rect": [
+     137.5,
+     234.3,
+     251,
+     242.6
+    ]
+   }
+  },
+  "signature": {
+   "alignment": "left",
+   "font_size": 9,
+   "line_spacing": null,
+   "min_font_size": 6,
+   "multiline": true,
+   "page": 3,
+   "rect": [
+    301,
+    499,
+    543,
+    541
+   ]
+  },
+  "template": {
+   "pages": 4,
+   "sha256": "dc268ba2090ea8f8cf4525abbf650ee85a50e86fc8a4bef92e5d85e3926b7891",
+   "url": "form/spain.pdf"
+  }
+ },
+ "rules": {
+  "clear": [
+   {
+    "paths": [
+     "occupation",
+     "accommodation",
+     "inviting_company",
+     "expenses"
+    ],
+    "when": {
+     "equals": true,
+     "path": "eu_family_exemption"
+    }
+   },
+   {
+    "paths": [
+     "residence.permit_type",
+     "residence.permit_number",
+     "residence.valid_until"
+    ],
+    "when": {
+     "not": true,
+     "path": "residence.lives_outside_country_of_nationality"
+    }
+   },
+   {
+    "paths": [
+     "previous_biometrics.date",
+     "previous_biometrics.visa_sticker_number"
+    ],
+    "when": {
+     "equals": false,
+     "path": "previous_biometrics.fingerprints_taken"
+    }
+   },
+   {
+    "paths": [
+     "guardian"
+    ],
+    "when": {
+     "ageAtLeast": 18
+    }
+   },
+   {
+    "paths": [
+     "expenses.sponsor"
+    ],
+    "when": {
+     "notOneOf": [
+      "sponsor",
+      "shared"
+     ],
+     "path": "expenses.paid_by"
+    }
+   }
+  ],
+  "required": [
+   "residence.permit_type",
+   "residence.permit_number",
+   "residence.valid_until",
+   "personal.marital_status_other",
+   "passport.type_other",
+   "journey.purpose_other",
+   "eu_family_member.relationship_other",
+   "expenses.applicant_other",
+   "expenses.sponsor_other",
+   "expenses.sponsor.name",
+   "expenses.applicant_means",
+   "expenses.sponsor_means",
+   "application.signature.image_path",
+   "eu_family_exemption"
+  ],
+  "unavailable": {
+   "accommodation": [
+    {
+     "equals": true,
+     "path": "eu_family_exemption"
+    }
+   ],
+   "expenses": [
+    {
+     "equals": true,
+     "path": "eu_family_exemption"
+    }
+   ],
+   "guardian": [
+    {
+     "ageAtLeast": 18
+    }
+   ],
+   "inviting_company": [
+    {
+     "equals": true,
+     "path": "eu_family_exemption"
+    }
+   ],
+   "occupation": [
+    {
+     "equals": true,
+     "path": "eu_family_exemption"
+    }
+   ],
+   "occupation.employer_or_school": [
+    {
+     "equals": true,
+     "path": "eu_family_exemption"
+    }
+   ]
+  },
+  "visible": {
+   "application.signature.image_path": [
+    {
+     "equals": true,
+     "path": "application.signature.enabled"
+    }
+   ],
+   "eu_family_member.relationship_other": [
+    {
+     "equals": "other",
+     "path": "eu_family_member.relationship"
+    }
+   ],
+   "expenses.applicant_means": [
+    {
+     "oneOf": [
+      "applicant",
+      "shared"
+     ],
+     "path": "expenses.paid_by"
+    }
+   ],
+   "expenses.applicant_other": [
+    {
+     "equals": "other",
+     "path": "expenses.applicant_means"
+    },
+    {
+     "oneOf": [
+      "applicant",
+      "shared"
+     ],
+     "path": "expenses.paid_by"
+    }
+   ],
+   "expenses.sponsor.name": [
+    {
+     "equals": "other",
+     "path": "expenses.sponsor.reference"
+    },
+    {
+     "oneOf": [
+      "sponsor",
+      "shared"
+     ],
+     "path": "expenses.paid_by"
+    }
+   ],
+   "expenses.sponsor.reference": [
+    {
+     "oneOf": [
+      "sponsor",
+      "shared"
+     ],
+     "path": "expenses.paid_by"
+    }
+   ],
+   "expenses.sponsor_means": [
+    {
+     "oneOf": [
+      "sponsor",
+      "shared"
+     ],
+     "path": "expenses.paid_by"
+    }
+   ],
+   "expenses.sponsor_other": [
+    {
+     "equals": "other",
+     "path": "expenses.sponsor_means"
+    },
+    {
+     "oneOf": [
+      "sponsor",
+      "shared"
+     ],
+     "path": "expenses.paid_by"
+    }
+   ],
+   "journey.purpose_other": [
+    {
+     "equals": "other",
+     "path": "journey.purposes"
+    }
+   ],
+   "passport.type_other": [
+    {
+     "equals": "other",
+     "path": "passport.type"
+    }
+   ],
+   "personal.marital_status_other": [
+    {
+     "equals": "other",
+     "path": "personal.marital_status"
+    }
+   ],
+   "previous_biometrics.date": [
+    {
+     "equals": true,
+     "path": "previous_biometrics.fingerprints_taken"
+    }
+   ],
+   "residence.permit_number": [
+    {
+     "equals": true,
+     "path": "residence.lives_outside_country_of_nationality"
+    }
+   ],
+   "residence.permit_type": [
+    {
+     "equals": true,
+     "path": "residence.lives_outside_country_of_nationality"
+    }
+   ],
+   "residence.valid_until": [
+    {
+     "equals": true,
+     "path": "residence.lives_outside_country_of_nationality"
+    }
+   ]
+  }
+ },
+ "sample": {
+  "accommodation": [
+   {
+    "address": "Calle de Ejemplo 1, 28000 Madrid",
+    "check_in": "01-06-2027",
+    "check_out": "08-06-2027",
+    "city": "Madrid",
+    "confirmation_code": "SAMPLE001",
+    "country": "Spain",
+    "email": null,
+    "name": "Sample Hotel Madrid",
+    "phone": "+34 900 000 001",
+    "type": "hotel"
+   },
+   {
+    "address": "Carrer de l Exemple 2, 08000 Barcelona",
+    "check_in": "08-06-2027",
+    "check_out": "15-06-2027",
+    "city": "Barcelona",
+    "confirmation_code": "SAMPLE002",
+    "country": "Spain",
+    "email": null,
+    "name": "Sample Apartment Barcelona",
+    "phone": "+34 900 000 002",
+    "type": "temporary_accommodation"
+   }
+  ],
+  "application": {
+   "date": "01-04-2027",
+   "place": "TEHRAN",
+   "signature": {
+    "enabled": false,
+    "image_path": null
+   }
+  },
+  "contact": {
+   "email": "alex.sample@mail.example",
+   "home_address": "No. 1, Sample Street, Example District, Tehran 1000000000, Iran",
+   "phone": "+98 900 000 0000"
+  },
+  "eu_family_exemption": false,
+  "expenses": {
+   "applicant_means": [
+    "credit_card",
+    "prepaid_accommodation",
+    "prepaid_transport"
+   ],
+   "paid_by": "applicant",
+   "sponsor_means": []
+  },
+  "journey": {
+   "additional_information": "TOURISM IN MADRID AND BARCELONA, 14 NIGHTS",
+   "arrival_date": "01-06-2027",
+   "departure_date": "15-06-2027",
+   "entries_requested": "single",
+   "first_entry_country": "SPAIN",
+   "main_destination": [
+    "SPAIN"
+   ],
+   "purposes": [
+    "tourism"
+   ]
+  },
+  "occupation": {
+   "current_occupation": "ENGINEER",
+   "employer_or_school": {
+    "address": "No. 2, Example Avenue, Tehran, Iran",
+    "name": "SAMPLE ENGINEERING CO.",
+    "phone": "+98 21 0000 0000"
+   }
+  },
+  "passport": {
+   "date_of_issue": "15-03-2024",
+   "issued_by": "IRAN",
+   "number": "X00000000",
+   "type": "ordinary",
+   "valid_until": "15-03-2031"
+  },
+  "personal": {
+   "country_of_birth": "IRAN",
+   "current_nationality": "IRANIAN",
+   "date_of_birth": "23-04-1990",
+   "given_names": "ALEX",
+   "marital_status": "married",
+   "national_id": "0000000000",
+   "nationality_at_birth": null,
+   "other_nationalities": [],
+   "place_of_birth": "TEHRAN",
+   "sex": "female",
+   "surname": "SAMPLE",
+   "surname_at_birth": null
+  },
+  "previous_biometrics": {
+   "date": null,
+   "fingerprints_taken": false,
+   "visa_sticker_number": null
+  },
+  "residence": {
+   "lives_outside_country_of_nationality": false,
+   "permit_number": null,
+   "permit_type": null,
+   "valid_until": null
+  }
+ },
+ "steps": [
+  {
+   "hint_fa": "همه اطلاعات این مرحله را دقیقاً از صفحه مشخصات گذرنامه (صفحه عکس‌دار) بردارید.\nنام‌ها را با حروف لاتین و همان املای گذرنامه بنویسید؛ حتی اگر املای دیگری را درست‌تر می‌دانید.\nهمه تاریخ‌ها میلادی و با قالب روز-ماه-سال هستند، مانند 23-04-1990 و با ارقام انگلیسی. تاریخ شمسی را وارد نکنید؛ گذرنامه ایرانی تاریخ میلادی را هم دارد.\nبرای هر نفر، حتی کودکان، یک فرم جداگانه لازم است. با دکمه + در نوار کناری متقاضی جدید اضافه کنید.",
+   "subtitle": "Start with the passport",
+   "title": "Personal details"
+  },
+  {
+   "hint_fa": "اطلاعات گذرنامه‌ای را وارد کنید که با آن سفر می‌کنید و ویزا روی آن چسبانده می‌شود.\nگذرنامه باید دست‌کم ۳ ماه پس از تاریخ خروج برنامه‌ریزی‌شده از منطقه شنگن اعتبار داشته باشد، در ۱۰ سال گذشته صادر شده باشد و دست‌کم دو صفحه خالی داشته باشد.\nاگر گذرنامه شما به‌زودی منقضی می‌شود، پیش از درخواست ویزا آن را تمدید کنید و اطلاعات گذرنامه جدید را بنویسید.",
+   "subtitle": "Your travel document",
+   "title": "Passport"
+  },
+  {
+   "hint_fa": "نشانی، ایمیل و تلفنی را بنویسید که واقعاً به آن دسترسی دارید؛ سفارت یا مرکز ویزا ممکن است برای تکمیل مدارک یا وقت مصاحبه با شما تماس بگیرد.\nنشانی را کامل و با حروف لاتین بنویسید: خیابان، کوچه، پلاک، واحد، شهر، کد پستی و کشور.\nسؤال اقامت فقط درباره کسی است که در کشوری غیر از کشور تابعیت خود زندگی می‌کند؛ مثلاً شهروند ایران که با اجازه اقامت در ترکیه یا امارات زندگی می‌کند.",
+   "subtitle": "Where you live",
+   "title": "Contact & residence"
+  },
+  {
+   "hint_fa": "این مرحله وضعیت خانوادگی و شغلی خود متقاضی را می‌پرسد، نه دیگر اعضای خانواده.\nبرای متقاضی زیر ۱۸ سال، مشخصات پدر، مادر یا سرپرست قانونی لازم است و فرم را هم سرپرست امضا می‌کند.\nبخش «عضو خانواده اتحادیه اروپا» فقط برای همسر، فرزند، نوه یا والدین تحت تکفل یک شهروند اتحادیه اروپا، منطقه اقتصادی اروپا یا سوئیس است. داشتن بستگانی که در اروپا زندگی یا تحصیل می‌کنند به‌تنهایی این وضعیت را ایجاد نمی‌کند.\nشغل را همان‌طور بنویسید که مدارک شغلی یا تحصیلی شما (گواهی اشتغال، فیش حقوقی، گواهی اشتغال به تحصیل) نشان می‌دهد.",
+   "subtitle": "Your circumstances",
+   "title": "Family & occupation"
+  },
+  {
+   "hint_fa": "ویزای کوتاه‌مدت شنگن برای حداکثر ۹۰ روز اقامت در هر بازه ۱۸۰ روزه است.\nدرخواست را به سفارت کشوری بدهید که مقصد اصلی شماست، یعنی بیشترین روزها را در آن می‌گذرانید. اگر مدت اقامت در چند کشور برابر است، کشوری که اول وارد آن می‌شوید ملاک است. این فرم برای وقتی است که مقصد اصلی شما اسپانیا باشد.\nتاریخ‌ها باید با بلیت یا رزرو پرواز، رزرو اقامتگاه و بیمه‌نامه یکی باشند.\nبیمه مسافرتی پزشکی با پوشش دست‌کم ۳۰٬۰۰۰ یورو برای کل منطقه شنگن و کل مدت سفر لازم است؛ در فرم نیامده ولی جزو مدارک است.",
+   "subtitle": "Map out the journey",
+   "title": "Travel"
+  },
+  {
+   "hint_fa": "اگر در ۵۹ ماه گذشته برای ویزای شنگن اثر انگشت داده‌اید، ممکن است دوباره لازم نباشد؛ مرکز ویزا در این باره تصمیم می‌گیرد.\nفقط به سابقه واقعی اثر انگشت پاسخ دهید. اگر مطمئن نیستید، پاسخ را خالی بگذارید تا PDF با عنوان پیش‌نویس ساخته شود و پیش از ارسال آن را بررسی کنید.\nکودکان زیر ۱۲ سال اثر انگشت نمی‌دهند.\nبخش مجوز ورود به مقصد نهایی فقط برای سفرهای ترانزیت از طریق شنگن به کشوری خارج از شنگن است که برای آن ویزا یا مجوز ورود دارید.",
+   "subtitle": "Previous records",
+   "title": "Biometrics & permits"
+  },
+  {
+   "hint_fa": "محل اقامت را دقیقاً مطابق رزرو یا دعوت‌نامه بنویسید: هتل، خانه اجاره‌ای یا میزبان شخصی.\nبرای چند شهر، با دکمه «Add accommodation» برای هر اقامتگاه یک ردیف جدا بسازید. تاریخ‌های اقامت باید بدون فاصله کل سفر را پوشش دهند.\nدرباره هزینه‌ها مشخص کنید چه کسی پرداخت می‌کند و با چه روشی. معمولاً گردش حساب بانکی سه تا شش ماه اخیر و، در صورت وجود حامی، نامه تعهد حامی جزو مدارک خواسته می‌شود.",
+   "subtitle": "Accommodation and funding",
+   "title": "Stay & expenses"
+  },
+  {
+   "hint_fa": "«Check application» سازگاری پاسخ‌ها و جا شدن متن در فرم را بررسی می‌کند؛ به معنی تأیید ویزا یا کامل بودن مدارک نیست.\nپیش‌نمایش هر چهار صفحه را با دقت با گذرنامه و مدارک خود مقایسه کنید.\nPDF را با تنظیم Actual Size یا 100% چاپ کنید و صفحه ۴ را در جای مشخص‌شده با دست امضا کنید. برای متقاضی زیر ۱۸ سال، سرپرست امضا می‌کند.\nاگر فایل با عنوان «draft» ذخیره شد، هنوز پاسخی خالی یا نیازمند بررسی دارد.",
+   "subtitle": "One final check",
+   "title": "Review & generate"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+// Cloudflare Workers static assets: publishes webapp/static/ as the website.
+// There is no server code; webapp/static/_headers adds the security headers.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "visafilla",
+  "compatibility_date": "2026-10-03",
+  "assets": {
+    "directory": "./webapp/static"
+  }
+}

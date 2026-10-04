@@ -1,86 +1,106 @@
-"""Local HTTP API security, validation, metadata and in-memory PDF tests."""
+"""Local static server security, published files and the reference validation messages."""
 
 from __future__ import annotations
 
-import base64
+import hashlib
 import json
-import time
 from http.client import HTTPConnection
+from pathlib import Path
 
-import pymupdf as fitz
-
+from script.core.paths import SPAIN_FORM_DIR
 from script.core.utils import TEMPLATE
 from script.tests.scenarios import example
+from webapp import validation
+from webapp.build import STATIC
 from webapp.fields import LABELS
-from webapp.server import MAX_BODY
+from webapp.server import SECURITY_HEADERS
 
 
-def request(server, route, body=None, headers=None, method=None):
+def request(server, route, headers=None, method='GET'):
     conn = HTTPConnection('127.0.0.1', server.server_port, timeout=30)
-    h = {'Origin': server.origin, 'X-App-Token': server.token, 'Content-Type': 'application/json'}
-    if headers:
-        h.update(headers)
-    raw = json.dumps(body) if body is not None else None
-    conn.request(method or ('POST' if body is not None else 'GET'), route, body=raw, headers=h)
+    conn.request(method, route, headers={'Origin': server.origin, **(headers or {})})
     res = conn.getresponse()
     data = res.read()
-    status = res.status
     response_headers = dict(res.getheaders())
     conn.close()
     if 'application/json' in response_headers.get('Content-Type', ''):
         data = json.loads(data)
-    return status, data, response_headers
+    return res.status, data, response_headers
 
 
-def test_bootstrap_metadata_and_sources(web_server):
-    status, data, headers = request(web_server, '/api/bootstrap')
+def test_meta_json_describes_the_whole_form(web_server):
+    status, meta, headers = request(web_server, '/meta.json')
     assert status == 200
-    assert data['profiles'] == []
-    assert len(data['steps']) == 8 and len(data['fields']) == 89
-    assert {f['path'] for f in data['fields']} == set(LABELS)
-    assert all(any('\u0600' <= c <= '\u06ff' for c in f['hint_fa']) for f in data['fields'])
-    assert all(
-        f['kind'] in {'string', 'select', 'multi', 'boolean', 'date', 'list', 'textarea', 'file'}
-        for f in data['fields']
-    )
+    assert len(meta['steps']) == 8 and len(meta['fields']) == 89
+    assert {f['path'] for f in meta['fields']} == set(LABELS)
+    assert all(any('؀' <= c <= 'ۿ' for c in f['hint_fa']) for f in meta['fields'])
+    assert set(meta['layout']) == {'template', 'fields', 'checkboxes', 'signature'}
     assert headers['Cache-Control'] == 'no-store'
+    # The committed copy served by the hosted site has the same content.
+    assert json.loads((STATIC / 'meta.json').read_text()) == meta
+
+
+def test_every_response_carries_the_security_headers(web_server):
+    for route in ['/', '/meta.json', '/app.js', '/engine/index.js', '/vendor/pdf-lib.esm.min.js', '/nope']:
+        _, _, headers = request(web_server, route)
+        for name, value in SECURITY_HEADERS.items():
+            assert headers[name] == value, (route, name)
+    assert "connect-src 'self'" in SECURITY_HEADERS['Content-Security-Policy']
+
+
+def test_hosted_headers_match_the_local_server():
+    rules = (STATIC / '_headers').read_text()
+    for name, value in SECURITY_HEADERS.items():
+        assert f'{name}: {value}' in rules, name
+
+
+def test_official_form_is_served_unchanged(web_server):
+    status, pdf, headers = request(web_server, '/form/spain.pdf')
+    assert status == 200 and headers['Content-Type'] == 'application/pdf'
+    assert pdf == TEMPLATE.read_bytes() == (STATIC / 'form/spain.pdf').read_bytes()
+    manifest = json.loads((SPAIN_FORM_DIR / 'manifest.json').read_text())
+    assert hashlib.sha256(pdf).hexdigest() == manifest['sha256']
 
 
 def test_local_origin_and_filesystem_guards(web_server):
     for headers in [{'Host': 'evil.example'}, {'Origin': 'https://evil.example'}, {'Sec-Fetch-Site': 'cross-site'}]:
-        assert request(web_server, '/api/bootstrap', headers=headers)[0] == 403
-    assert request(web_server, '/api/validate', {'data': example()}, headers={'X-App-Token': 'bad'})[0] == 403
+        assert request(web_server, '/meta.json', headers=headers)[0] == 403
     for route in [
-        '/data/alpha.json',
-        '/../data/alpha.json',
-        '/%2e%2e/data/alpha.json',
-        '/template/schengen_application.pdf',
+        '/../webapp/server.py',
+        '/%2e%2e/script/core/schema.py',
+        '/../template/spain/manifest.json',
+        '/_headers',
         '/.gitignore',
+        '/vendor/../../server.py',
+        '/missing.js',
     ]:
-        assert request(web_server, route)[0] == 404
-    assert (
-        request(web_server, '/api/validate', {'data': example()}, headers={'Content-Length': str(MAX_BODY + 1)})[0]
-        == 413
-    )
-    assert request(web_server, '/api/validate', {'data': example()}, headers={'Content-Type': 'text/plain'})[0] == 415
+        assert request(web_server, route)[0] == 404, route
+    assert request(web_server, '/meta.json', method='POST')[0] == 405
 
 
-def test_sample_applicant_is_complete_and_valid(web_server):
-    status, meta, _ = request(web_server, '/api/bootstrap')
-    assert status == 200
-    status, result, _ = request(web_server, '/api/validate', {'data': meta['sample']})
-    assert status == 200, result
+def test_static_files_have_correct_types(web_server):
+    for route, kind in [
+        ('/', 'text/html'),
+        ('/app.css', 'text/css'),
+        ('/engine/schema.js', 'text/javascript'),
+        ('/vendor/pdf.worker.min.mjs', 'text/javascript'),
+    ]:
+        status, _, headers = request(web_server, route)
+        assert status == 200 and headers['Content-Type'].startswith(kind), route
 
 
-def test_validation_messages_are_plain_language(web_server):
+def test_sample_applicant_is_complete_and_valid():
+    sample = json.loads((SPAIN_FORM_DIR / 'sample.json').read_text())
+    assert validation.check(sample) == []
+
+
+def test_validation_messages_are_plain_language():
     data = example()
     data['personal']['given_names'] = None
     data['personal']['date_of_birth'] = 'b'
     data['personal']['country_of_birth'] = '   '
     data['eu_family_exemption'] = None
-    status, result, _ = request(web_server, '/api/validate', {'data': data})
-    assert status == 422
-    messages = {e['path']: e['message'] for e in result['errors']}
+    messages = {e['path']: e['message'] for e in validation.check(data)}
     assert messages['personal.given_names'] == 'This answer is required.'
     assert messages['personal.date_of_birth'] == 'Use the format DD-MM-YYYY, for example 23-04-1990.'
     assert messages['personal.country_of_birth'] == 'This answer is required.'
@@ -88,118 +108,20 @@ def test_validation_messages_are_plain_language(web_server):
     assert not any('pattern' in m or 'String should' in m or 'Input should' in m for m in messages.values())
     data = example()
     data['personal']['date_of_birth'] = '31-02-1970'
-    messages = [e['message'] for e in request(web_server, '/api/validate', {'data': data})[1]['errors']]
-    assert 'This date does not exist. Check the day and month.' in messages
+    assert 'This date does not exist. Check the day and month.' in [e['message'] for e in validation.check(data)]
 
 
-def test_json_editor_parse_and_structured_errors(web_server):
-    status, data, _ = request(web_server, '/api/parse', {'text': '{"personal": {"surname": "DRAFT"}}'})
-    assert status == 200 and data['data']['personal']['surname'] == 'DRAFT'
-    assert any(e['path'] == 'passport.type' for e in data['errors'])
-    for text in ['{"bad":', '{"a":1,"a":2}', '[]', '{"n":NaN}']:
-        assert request(web_server, '/api/parse', {'text': text})[0] == 422
+def test_reference_errors_link_to_form_fields():
     data = example()
     data['previous_biometrics']['date'] = '01-01-2020'
-    status, result, _ = request(web_server, '/api/validate', {'data': data})
-    assert status == 422
-    assert result['errors'][0]['path'] == 'previous_biometrics.fingerprints_taken'
+    assert validation.check(data)[0]['path'] == 'previous_biometrics.fingerprints_taken'
     data = example()
     data['personal']['surname'] = 'A' * 5000
-    assert request(web_server, '/api/validate', {'data': data})[0] == 422
+    assert validation.check(data) == [
+        {'path': '', 'paths': [], 'message': 'An applicant value exceeds 4,000 characters'}
+    ]
 
 
-def test_generate_preserves_source_and_has_four_pages(web_server):
-    original = TEMPLATE.read_bytes()
-    assert request(web_server, '/api/validate', {'data': example()})[0] == 200
-    status, result, _ = request(
-        web_server, '/api/generate', {'data': example(), 'name': 'charlie', 'revision': '42', 'draft': True}
-    )
-    assert status == 200 and result['revision'] == '42' and result['filename'].endswith('_draft.pdf')
-    assert len(result['pages']) == 4
-    status, pdf, headers = request(web_server, result['pdf'])
-    assert status == 200 and headers['Content-Type'] == 'application/pdf'
-    with fitz.open(stream=pdf, filetype='pdf') as doc, fitz.open(TEMPLATE) as source:
-        assert len(doc) == 4
-        for a, b in zip(source, doc, strict=False):
-            assert a.rect == b.rect
-            for xref in a.get_contents():
-                assert source.xref_stream(xref) == doc.xref_stream(xref)
-    assert request(web_server, result['pages'][0])[1].startswith(b'\x89PNG')
-    assert TEMPLATE.read_bytes() == original
-    for a in web_server.artifacts.values():
-        a['created'] = time.monotonic() - 1000
-    assert request(web_server, result['pdf'])[0] == 404
-
-
-def test_web_signature_requires_upload_never_reads_path(web_server, tmp_path):
-    data = example()
-    data['application']['signature'] = {'enabled': True, 'image_path': '/etc/passwd'}
-    status, result, _ = request(web_server, '/api/generate', {'data': data})
-    assert status == 422 and result['errors'][0]['path'] == 'application.signature.image_path'
-    assert 'reattach' in result['errors'][0]['message']
-    with fitz.open() as doc:
-        page = doc.new_page(width=100, height=30)
-        page.insert_text((3, 20), 'TEST')
-        image = page.get_pixmap().tobytes('png')
-    status, result, _ = request(
-        web_server, '/api/generate', {'data': data, 'signature': base64.b64encode(image).decode()}
-    )
-    assert status == 200
-    data['application']['signature'] = {'enabled': False, 'image_path': None}
-    assert request(web_server, '/api/validate', {'data': data, 'signature': base64.b64encode(image).decode()})[0] == 422
-
-
-def test_blank_fingerprints_generate_draft_without_losing_visa(web_server):
-    data = example()
-    data['previous_biometrics'].update(
-        fingerprints_taken=None,
-        visa_sticker_number='EXAMPLE123',
-        visa_issuing_country='AUSTRIA',
-        visa_entry_date='15-03-2023',
-    )
-    data['accommodation']['email'] = (
-        'Madrid: Madrid@hotel.example\nBarcelona: Barcelona@hotel.example\nParis: Paris@hotel.example'
-    )
-    status, result, _ = request(web_server, '/api/generate', {'data': data, 'name': 'pending', 'draft': False})
-    assert status == 200 and result['draft'] is True
-    _, pdf, _ = request(web_server, result['pdf'])
-    with fitz.open(stream=pdf, filetype='pdf') as doc:
-        assert len(doc) == 4
-        text = ' '.join(page.get_text() for page in doc)
-        for expected in ['EXAMPLE123', 'Madrid@hotel.example', 'Barcelona@hotel.example', 'Paris@hotel.example']:
-            assert expected in text
-
-
-def test_modules_use_explicit_allowlist(web_server):
-    for module in ('app', 'helpers', 'state', 'storage', 'rules', 'render', 'api', 'actions'):
-        status, body, headers = request(web_server, f'/{module}.js')
-        assert status == 200 and body
-        assert headers['Content-Type'].startswith('text/javascript')
-    for route in ('/unknown.js', '/../state.js', '/%2e%2e/state.js', '/server.py', '/tests/test_browser.py'):
-        assert request(web_server, route)[0] == 404
-
-
-def test_preview_pages_are_lazy_and_cached(web_server, monkeypatch):
-    original = fitz.Page.get_pixmap
-    calls = []
-
-    def render_page(page, *args, **kwargs):
-        calls.append(page.number)
-        return original(page, *args, **kwargs)
-
-    monkeypatch.setattr(fitz.Page, 'get_pixmap', render_page)
-    status, result, _ = request(web_server, '/api/generate', {'data': example()})
-    assert status == 200 and calls == []
-    token = result['pdf'].split('/')[-2]
-    artifact = web_server.artifacts[token]
-    assert artifact['pages'] == {}
-    first = request(web_server, result['pages'][2])
-    second = request(web_server, result['pages'][2])
-    assert first[0] == second[0] == 200
-    assert first[1] == second[1] and first[1].startswith(b'\x89PNG')
-    assert calls == [2]
-    assert set(artifact['pages']) == {2}
-    assert request(web_server, result['pages'][3])[0] == 200
-    assert calls == [2, 3]
-    artifact['created'] = time.monotonic() - 1000
-    assert request(web_server, result['pages'][2])[0] == 404
+def test_no_applicant_endpoints_remain():
+    source = Path(__file__).resolve().parents[1].joinpath('server.py').read_text()
+    assert '/api/' not in source and 'do_POST' in source

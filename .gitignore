@@ -11,3 +11,7 @@ __pycache__/
 /output/
 *.local.json
 .env
+
+# Cloudflare tooling caches
+.wrangler/
+node_modules/
