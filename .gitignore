@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+/tmp/
+
+# Local applicant data and generated forms — never commit these
+/input/
+/output/
+*.local.json
+.env

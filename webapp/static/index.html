@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>VisaFilla · Schengen visa forms</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/app.css">
+  <script type="module" src="/app.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#workspace">Skip to application</a>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></symbol>
+    <symbol id="i-passport" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h8.5a3.5 3.5 0 0 0 0-7h-9a3.5 3.5 0 0 1 0-7H16"/></symbol>
+    <symbol id="i-fingerprint" viewBox="0 0 24 24"><path d="M6.5 6.5A8 8 0 0 1 20 12v1"/><path d="M4 11a8 8 0 0 1 1-3"/><path d="M8 12a4 4 0 0 1 8 0v1.5"/><path d="M12 12v3a7 7 0 0 1-1.5 5"/><path d="M16 16.5a11 11 0 0 1-1 3.5"/><path d="M8 15.5c0 1.8-.5 3.3-1.5 4.5"/><path d="M4 15v.5"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19V6"/><path d="M3 14h18v5"/><path d="M21 14a3 3 0 0 0-3-3h-7v3"/><circle cx="7" cy="10.5" r="2"/></symbol>
+    <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 15l2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 9.5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M7 14l5-5 5 5"/><path d="M5 3h14"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-chevrons" viewBox="0 0 24 24"><path d="M8 9l4-4 4 4"/><path d="M8 15l4 4 4-4"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5"/><path d="M12 7.5v.01"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5"/><path d="M12 16.5v.01"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><path d="M12 17v.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  </svg>
+  <aside class="sidebar" aria-label="Applicant, steps and actions">
+    <div class="side-header">
+      <a class="brand" href="/" aria-label="VisaFilla home"><span class="brand-icon">v.</span><span>VisaFilla</span></a>
+      <button type="button" id="country-switch" class="country-chip hidden"></button>
+    </div>
+
+    <div class="applicant-row">
+      <button type="button" id="applicant-switch" class="applicant-switch" aria-haspopup="true" aria-expanded="false"
+        aria-controls="applicant-menu">
+        <span class="avatar" id="applicant-avatar">?</span>
+        <span class="applicant-text"><strong id="current-name">Loading…</strong><span
+            id="progress-detail">Add your first applicant</span></span>
+        <svg class="icon" aria-hidden="true"><use href="#i-chevrons"/></svg>
+        <progress id="completion" class="needs-profile" max="100" value="0">0%</progress>
+        <strong id="progress-percent" class="needs-profile">0%</strong>
+      </button>
+      <button type="button" id="new-profile" class="square-button" aria-label="Add applicant"
+        title="Add applicant"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+      <div id="applicant-menu" class="applicant-menu" hidden>
+        <p class="menu-label">Switch applicant</p>
+        <nav id="profiles" aria-label="Choose applicant"></nav>
+        <div class="menu-divider"></div>
+        <button type="button" id="sample-profile" class="menu-item"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Try with sample data</button>
+        <button type="button" id="import-profile" class="menu-item"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg>Import applicant JSON</button>
+        <button type="button" id="manage-profile" class="menu-item needs-profile"><svg class="icon" aria-hidden="true"><use href="#i-pencil"/></svg>Rename, duplicate or
+          delete</button>
+        <button type="button" id="clear-data" class="menu-item danger"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg>Clear all drafts</button>
+      </div>
+    </div>
+
+    <p class="side-label needs-profile">Steps</p>
+    <nav id="steps" aria-label="Application steps"></nav>
+
+    <div class="side-actions needs-profile">
+      <button id="validate" class="action-button"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Check application<small
+            id="validation-status">Not validated yet</small></span></button>
+      <button id="export-profile" class="action-button quiet"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg><span>Export backup<small>Applicant
+            JSON</small></span></button>
+    </div>
+
+    <div class="side-footer">
+      <span class="save-line"><span class="status-dot"></span><span id="save-status" role="status"
+          aria-live="polite">Opening drafts…</span></span>
+      <span class="footer-links"><button type="button" id="help" class="footer-link"><svg class="icon" aria-hidden="true"><use href="#i-help"/></svg>Help</button><button type="button" id="about" class="footer-link"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Privacy</button></span>
+    </div>
+  </aside>
+
+  <div class="app-shell">
+    <main id="workspace" tabindex="-1">
+      <div id="fatal" class="notice error hidden" role="alert"></div>
+      <div id="storage-warning" class="notice error hidden" role="alert"></div>
+      <div id="message" class="notice hidden" role="status" aria-live="polite"></div>
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow" id="step-count">SCHENGEN VISA FORMS</p>
+          <h1 id="step-title">Your applications</h1>
+          <p id="step-subtitle" class="subtitle">One person, one step at a time.</p>
+        </div>
+        <div class="view-switch" role="group" aria-label="Editor view"><button id="form-view" aria-pressed="true">Guided
+            form</button><button id="json-view" aria-pressed="false">{ } JSON</button></div>
+      </section>
+      <section class="editor-column">
+          <div id="form-content"></div>
+          <section id="json-content" class="card hidden">
+            <div class="card-heading">
+              <div><span class="eyebrow">THE SAME APPLICATION, IN JSON</span>
+                <h2>Edit applicant JSON</h2>
+              </div>
+            </div>
+            <p class="hint" lang="fa" dir="rtl">تغییرات این ویرایشگر جداگانه ذخیره می‌شوند. برای نمایش در فرم، Apply
+              JSON را بزنید. خطای نوشتاری پاسخ‌های فرم را پاک نمی‌کند.</p><label for="json-editor"
+              class="sr-only">Applicant JSON</label><textarea id="json-editor" spellcheck="false" wrap="off"></textarea>
+            <p id="json-status" role="status"></p>
+            <div class="button-row"><button id="apply-json" class="primary">Apply JSON</button><button id="reset-json"
+                class="secondary">Use form version</button><button id="download-json" class="text-button">Export editor
+                JSON</button></div>
+          </section>
+          <div id="errors-panel" class="card errors-panel hidden" role="alert"></div>
+          <section id="review-content" class="hidden"></section>
+          <section id="preview-content" class="card hidden" aria-label="Generated PDF preview"></section>
+      </section>
+      <footer class="step-footer"><button id="previous-step" class="secondary">← Previous</button><span
+          id="footer-caption">Your progress is saved automatically.</span><button id="next-step"
+          class="primary">Continue →</button></footer>
+    </main>
+  </div>
+  <input type="file" id="import-file" accept=".json,application/json" hidden>
+  <dialog id="modal">
+    <form method="dialog">
+      <div class="dialog-heading">
+        <h2 id="modal-title">Applicant</h2><button type="button" value="cancel" class="icon-button"
+          aria-label="Close dialog">×</button>
+      </div>
+      <div id="modal-body"></div>
+      <div id="modal-actions" class="button-row"></div>
+    </form>
+  </dialog>
+  <dialog id="country-dialog" class="country-dialog" aria-labelledby="country-title">
+    <div class="dialog-heading">
+      <div>
+        <p class="eyebrow">SCHENGEN SHORT-STAY VISA</p>
+        <h2 id="country-title">Which country are you applying to?</h2>
+      </div><button type="button" id="country-close" class="icon-button" aria-label="Close">×</button>
+    </div>
+    <p class="country-intro">Choose the Schengen country whose consulate or visa centre will receive your application,
+      usually your main destination. You can change this later from the sidebar.</p>
+    <div id="country-grid"></div>
+  </dialog>
+  <dialog id="welcome-dialog" class="welcome-dialog" aria-labelledby="welcome-title">
+    <p class="eyebrow">HOW IT WORKS</p>
+    <h2 id="welcome-title">Fill your Schengen form in four steps</h2>
+    <ol class="welcome-steps">
+        <li><span class="welcome-icon"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span><div><strong>Add an applicant</strong><p>One form per person, children included. Everything stays in this browser.</p><p class="welcome-fa" lang="fa" dir="rtl">برای هر نفر، حتی کودکان، یک فرم جدا بسازید. همه اطلاعات فقط در همین مرورگر می‌ماند.</p></div></li>
+        <li><span class="welcome-icon"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg></span><div><strong>Answer step by step</strong><p>Tap a choice, type the rest. The <b>i</b> next to each question explains it in Persian. Enter jumps to the next question.</p><p class="welcome-fa" lang="fa" dir="rtl">گزینه‌ها را لمس کنید و بقیه را تایپ کنید. علامت i کنار هر سؤال راهنمای فارسی آن را نشان می‌دهد.</p></div></li>
+        <li><span class="welcome-icon"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg></span><div><strong>Check your answers</strong><p>Fix anything marked in red. Imported values ask for one quick check.</p><p class="welcome-fa" lang="fa" dir="rtl">موارد قرمز را اصلاح کنید. مقدارهای واردشده از فایل یک بار تأیید می‌خواهند.</p></div></li>
+        <li><span class="welcome-icon"><svg class="icon" aria-hidden="true"><use href="#i-file-check"/></svg></span><div><strong>Download, print and sign</strong><p>Print the PDF at 100% and sign page 4 by hand. Export a JSON backup to keep your work.</p><p class="welcome-fa" lang="fa" dir="rtl">PDF را با اندازه ۱۰۰٪ چاپ و صفحه ۴ را با دست امضا کنید. از اطلاعات خود نسخه پشتیبان JSON بگیرید.</p></div></li>
+    </ol>
+    <div class="welcome-footer">
+      <label class="welcome-check"><input type="checkbox" id="welcome-hide"> Don’t show this again</label>
+      <div class="button-row"><button type="button" id="welcome-sample" class="secondary"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>Try with sample
+          data</button><button type="button" id="welcome-start" class="primary">Start</button></div>
+    </div>
+  </dialog>
+  <noscript>This local app needs JavaScript to save drafts and show the guided form.</noscript>
+</body>
+
+</html>

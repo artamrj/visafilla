@@ -1,0 +1,93 @@
+{
+  "personal": {
+    "surname": "SAMPLE",
+    "surname_at_birth": null,
+    "given_names": "ALEX",
+    "date_of_birth": "23-04-1990",
+    "place_of_birth": "TEHRAN",
+    "country_of_birth": "IRAN",
+    "current_nationality": "IRANIAN",
+    "nationality_at_birth": null,
+    "other_nationalities": [],
+    "sex": "female",
+    "marital_status": "married",
+    "national_id": "0000000000"
+  },
+  "passport": {
+    "type": "ordinary",
+    "number": "X00000000",
+    "date_of_issue": "15-03-2024",
+    "valid_until": "15-03-2031",
+    "issued_by": "IRAN"
+  },
+  "contact": {
+    "home_address": "No. 1, Sample Street, Example District, Tehran 1000000000, Iran",
+    "email": "alex.sample@mail.example",
+    "phone": "+98 900 000 0000"
+  },
+  "residence": {
+    "lives_outside_country_of_nationality": false,
+    "permit_type": null,
+    "permit_number": null,
+    "valid_until": null
+  },
+  "occupation": {
+    "current_occupation": "ENGINEER",
+    "employer_or_school": {
+      "name": "SAMPLE ENGINEERING CO.",
+      "address": "No. 2, Example Avenue, Tehran, Iran",
+      "phone": "+98 21 0000 0000"
+    }
+  },
+  "journey": {
+    "purposes": ["tourism"],
+    "additional_information": "TOURISM IN MADRID AND BARCELONA, 14 NIGHTS",
+    "main_destination": ["SPAIN"],
+    "first_entry_country": "SPAIN",
+    "entries_requested": "single",
+    "arrival_date": "01-06-2027",
+    "departure_date": "15-06-2027"
+  },
+  "previous_biometrics": {
+    "fingerprints_taken": false,
+    "date": null,
+    "visa_sticker_number": null
+  },
+  "accommodation": [
+    {
+      "city": "Madrid",
+      "country": "Spain",
+      "type": "hotel",
+      "name": "Sample Hotel Madrid",
+      "address": "Calle de Ejemplo 1, 28000 Madrid",
+      "email": null,
+      "phone": "+34 900 000 001",
+      "check_in": "01-06-2027",
+      "check_out": "08-06-2027",
+      "confirmation_code": "SAMPLE001"
+    },
+    {
+      "city": "Barcelona",
+      "country": "Spain",
+      "type": "temporary_accommodation",
+      "name": "Sample Apartment Barcelona",
+      "address": "Carrer de l Exemple 2, 08000 Barcelona",
+      "email": null,
+      "phone": "+34 900 000 002",
+      "check_in": "08-06-2027",
+      "check_out": "15-06-2027",
+      "confirmation_code": "SAMPLE002"
+    }
+  ],
+  "expenses": {
+    "paid_by": "applicant",
+    "applicant_means": ["credit_card", "prepaid_accommodation", "prepaid_transport"],
+    "sponsor_means": []
+  },
+  "eu_family_exemption": false,
+  "application": {
+    "place": "TEHRAN",
+    "date": "01-04-2027",
+    "signature": {"enabled": false, "image_path": null}
+  }
+}

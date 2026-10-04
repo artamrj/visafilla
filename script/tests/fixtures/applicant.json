@@ -1,0 +1,70 @@
+{
+  "personal": {
+    "surname": "EXAMPLE",
+    "surname_at_birth": "EXAMPLE",
+    "given_names": "FICTIONAL APPLICANT",
+    "date_of_birth": "01-01-1970",
+    "place_of_birth": "TEHRAN",
+    "country_of_birth": "IRAN",
+    "current_nationality": "IRANIAN",
+    "nationality_at_birth": "IRANIAN",
+    "other_nationalities": [],
+    "sex": "male",
+    "marital_status": "married",
+    "national_id": "FICTIONAL-ID-000"
+  },
+  "passport": {
+    "type": "ordinary",
+    "number": "EXAMPLE000",
+    "date_of_issue": "01-01-2024",
+    "valid_until": "01-01-2030",
+    "issued_by": "IRAN"
+  },
+  "contact": {
+    "home_address": "123 FICTIONAL STREET, EXAMPLE DISTRICT, TEHRAN, IRAN",
+    "email": "Fictional.Applicant@family.example",
+    "phone": "+98 00 0000 0000"
+  },
+  "residence": {
+    "lives_outside_country_of_nationality": false,
+    "permit_type": null,
+    "permit_number": null,
+    "valid_until": null
+  },
+  "occupation": {
+    "current_occupation": "RETIRED",
+    "employer_or_school": null
+  },
+  "journey": {
+    "purposes": ["tourism"],
+    "additional_information": "TOURISM IN SPAIN - FICTIONAL EXAMPLE",
+    "main_destination": ["SPAIN"],
+    "first_entry_country": "SPAIN",
+    "entries_requested": "single",
+    "arrival_date": "01-06-2027",
+    "departure_date": "15-06-2027"
+  },
+  "previous_biometrics": {
+    "fingerprints_taken": false,
+    "date": null,
+    "visa_sticker_number": null
+  },
+  "accommodation": {
+    "type": "hotel",
+    "name": "FICTIONAL EXAMPLE HOTEL",
+    "address": "123 IMAGINARY AVENUE, 28000 MADRID, SPAIN",
+    "email": "Reservations@hotel.example",
+    "phone": "+34 000 000 000"
+  },
+  "expenses": {
+    "paid_by": "applicant",
+    "applicant_means": ["cash", "credit_card", "prepaid_accommodation", "prepaid_transport"],
+    "sponsor_means": []
+  },
+  "eu_family_exemption": false,
+  "application": {
+    "place": "TEHRAN",
+    "date": "01-04-2027",
+    "signature": {"enabled": false, "image_path": null}
+  }
+}

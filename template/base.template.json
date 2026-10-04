@@ -1,0 +1,129 @@
+{
+  "personal": {
+    "surname": null,
+    "surname_at_birth": null,
+    "given_names": null,
+    "date_of_birth": null,
+    "place_of_birth": null,
+    "country_of_birth": null,
+    "current_nationality": null,
+    "nationality_at_birth": null,
+    "other_nationalities": [],
+    "sex": null,
+    "marital_status": null,
+    "marital_status_other": null,
+    "national_id": null
+  },
+  "passport": {
+    "type": null,
+    "type_other": null,
+    "number": null,
+    "date_of_issue": null,
+    "valid_until": null,
+    "issued_by": null
+  },
+  "contact": {
+    "home_address": null,
+    "email": null,
+    "phone": null
+  },
+  "residence": {
+    "lives_outside_country_of_nationality": null,
+    "permit_type": null,
+    "permit_number": null,
+    "valid_until": null
+  },
+  "occupation": {
+    "current_occupation": null,
+    "employer_or_school": {
+      "name": null,
+      "address": null,
+      "phone": null
+    }
+  },
+  "journey": {
+    "purposes": [],
+    "purpose_other": null,
+    "additional_information": null,
+    "main_destination": [],
+    "first_entry_country": null,
+    "entries_requested": null,
+    "arrival_date": null,
+    "departure_date": null
+  },
+  "previous_biometrics": {
+    "fingerprints_taken": null,
+    "date": null,
+    "visa_sticker_number": null,
+    "visa_issuing_country": null,
+    "visa_entry_date": null
+  },
+  "accommodation": [
+    {
+      "country": null,
+      "city": null,
+      "check_in": null,
+      "check_out": null,
+      "confirmation_code": null,
+      "booking_details": null,
+      "type": null,
+      "name": null,
+      "address": null,
+      "email": null,
+      "phone": null
+    }
+  ],
+  "expenses": {
+    "paid_by": null,
+    "applicant_means": [],
+    "sponsor_means": [],
+    "applicant_other": null,
+    "sponsor_other": null,
+    "sponsor": {
+      "reference": null,
+      "name": null
+    }
+  },
+  "application": {
+    "place": null,
+    "date": null,
+    "signature": {
+      "enabled": false,
+      "image_path": null
+    }
+  },
+  "guardian": {
+    "surname": null,
+    "given_names": null,
+    "address": null,
+    "phone": null,
+    "email": null,
+    "nationality": null
+  },
+  "eu_family_member": {
+    "surname": null,
+    "given_names": null,
+    "date_of_birth": null,
+    "nationality": null,
+    "document_number": null,
+    "relationship": null,
+    "relationship_other": null
+  },
+  "eu_family_exemption": null,
+  "inviting_company": {
+    "name": null,
+    "address": null,
+    "contact": {
+      "surname": null,
+      "given_names": null,
+      "address": null,
+      "email": null
+    },
+    "phone": null
+  },
+  "final_destination_permit": {
+    "issued_by": null,
+    "valid_from": null,
+    "valid_until": null
+  }
+}
